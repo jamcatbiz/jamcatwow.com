@@ -26,7 +26,7 @@
     <div
       class="flex-none card card-bordered {plan.id === highlightedPlanId
         ? 'border-error shadow-error'
-        : 'border-gray-300'} shadow-lg flex-1 flex-grow min-w-[260px] max-w-[310px] p-6"
+        : 'border-slate-300'} shadow-lg flex-1 flex-grow min-w-[260px] max-w-[310px] p-6"
     >
       <div class="flex flex-col h-full">
         <div class="text-xl font-bold">{plan.name}</div>

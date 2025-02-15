@@ -1,13 +1,15 @@
 <script lang="ts">
-  import PricingModule from "./pricing_module.svelte"
+  import PricingModule from "./PricingModule.svelte"
   import { WebsiteName } from "../../../config"
 
   type PlanFeatureRow = {
     name: string
     freeIncluded?: boolean
-    proIncluded?: boolean
+    subscriberIncluded?: boolean
+    premierIncluded?: boolean
     freeString?: string
     subscriberString?: string
+    premierString?: string
     header?: boolean
   }
 
