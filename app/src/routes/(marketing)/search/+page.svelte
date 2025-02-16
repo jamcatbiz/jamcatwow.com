@@ -138,15 +138,15 @@
       <a
         href={result.item.path || "/"}
         id="search-result-{i + 1}"
-        class="card my-6 bg-white shadow-xl flex-row overflow-hidden focus:border"
+        class="card bg-base-300 my-6 shadow-xl flex-row overflow-hidden focus:border"
       >
-        <div class="flex-none w-6 md:w-32 bg-secondary"></div>
+        <div class="flex-none w-6 bg-primary"></div>
         <div class="py-6 px-6">
           <div class="text-xl">{result.item.title}</div>
           <div class="text-sm text-accent">
             {result.item.path}
           </div>
-          <div class="text-slate-500">{result.item.description}</div>
+          <div class="opacity-70">{result.item.description}</div>
         </div>
       </a>
     {/each}

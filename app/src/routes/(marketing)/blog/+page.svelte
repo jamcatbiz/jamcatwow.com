@@ -21,7 +21,7 @@
 
   {#each sortedBlogPosts as post}
     <a href={post.link}>
-      <div class="flex-row card my-6 shadow-lg  overflow-hidden">
+      <div class="flex-row card bg-base-300 my-6 shadow-lg overflow-hidden">
         <div class="flex-none w-6 bg-primary"></div>
         <div class="py-6 px-6">
           <div class="text-xl font-semibold">{post.title}</div>
