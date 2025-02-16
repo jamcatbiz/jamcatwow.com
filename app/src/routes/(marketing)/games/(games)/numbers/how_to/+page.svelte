@@ -7,6 +7,7 @@
   import IconSolved from "~icons/fa6-solid/star"
   // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
+  import { todaysGame } from "$numbers/state.svelte"
 </script>
 
 <div class="flex w-full justify-center">
@@ -99,7 +100,8 @@
         <div class="chat chat-end w-80">
           <div class="chat-bubble">
             JamCatWow Numbers #34 <br>
-            ☆★★<br>
+            {todaysGame.goalNumbers[0]} {todaysGame.goalNumbers[1]} {todaysGame.goalNumbers[2]}<br>
+            . ☆ . ★ . ★ .<br>
             270 points<br>
             jamcatwow.com/games/numbers
           </div>

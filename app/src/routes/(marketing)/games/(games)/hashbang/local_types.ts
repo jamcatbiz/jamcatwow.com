@@ -2,11 +2,20 @@ import type { LocalStorage } from "$lib/storage.svelte";
 
 export type Board = Array<Array<string>>
 
+export type Swaps = {
+  count: number;
+  swaps: {
+    [key: number]: {
+      colors: Array<string>
+    }
+  }
+}
+
 export type Game = {
-  startBoard: Board,
-  solvedBoard: Board,
-  gameWords: Array<string>,
-  locks: Array<Array<number>>,
+  startBoard: Board;
+  solvedBoard: Board;
+  gameWords: Array<string>;
+  locks: Array<Array<number>>;
   date: string;
 }
 

@@ -1,4 +1,4 @@
-import type { GuessesSort, Game, Guesses, KeyData, } from '$hashbang/local_types.ts';
+import type { GuessesSort, Game, Guesses, KeyData, Swaps, } from '$hashbang/local_types.ts';
 import { LocalStorage } from '$lib/storage.svelte';
 import { getDate } from '$lib/get_date.svelte';
 
@@ -18,12 +18,17 @@ const defaultGame: Game = {
   date: '',
   solvedBoard: [],
 }
+const defaultSwaps: Swaps = {
+  count: 0,
+  swaps: {},
+}
 
 export const todaysDateIso = d.iso;
 export const todaysDateLocale = d.locale;
 export const yesterdaysDateIso = yd.iso;
 export const yesterdaysDateLocale = yd.locale;
 export const board = $state(JSON.parse(JSON.stringify(defaultGame.startBoard)))
+export const swaps = $state(JSON.parse(JSON.stringify(defaultSwaps)))
 export const todaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const yesterdaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const activeCell = $state([0,0])

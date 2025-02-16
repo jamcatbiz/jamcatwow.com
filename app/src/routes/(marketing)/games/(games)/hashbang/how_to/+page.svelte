@@ -17,46 +17,22 @@
       </button>
     </a>
     <h3 class="text-2xl font-serif font-semibold">How To Play</h3>
-    <p class="mt-2">Race to calculate goal numbers using arithmetic.</p>
+    <p class="mt-2 font-medium">Solve the crossword by swapping letters.</p>
     <div class="instructions font-light">
       <ul class="list-disc pl-10">
-        <li>There are 3 goal numbers</li>
-        <li>There are 6 starting numbers</li>
-        <li>Use addition, subtraction, multiplication, and division</li>
-        <li>Find goal numbers for 3 minutes</li>
-        <li>Get one star for finding a goal number</li>
-        <li>Get one star for finding the shortest path to a goal number</li>
-        <li>New puzzles released daily, midnight est</li>
+        <li>There are four five-letter words scrambled up</li>
+        <li>Highlighted squares are locked</li>
+        <li>Symbol indicators help you track your swaps</li>
+        <li>Aim for the target number of swaps each day</li>
+        <li>Four strikes and you're out</li>
       </ul>
       <div class="divider"></div>
 
       <h3 class="text-2xl font-serif font-semibold mt-4">Scoring</h3>
-      <div class="flex justify-center">
-        <div
-          class="flex card w-24 justify-center p-2 m-1 font-bold text-4xl mt-4"
-        >
-          <div class="flex flex-col">
-            <div class="flex">
-              <h2 class="">123</h2>
-            </div>
-            <div
-              class="flex text-surface-500 pb-1 justify-center text-sm text-accent"
-            >
-              <div class="">
-                <IconSolved />
-              </div>
-              <div class="">
-                <IconEmpty />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <ul class="list-disc pl-10">
-        <li>Big bold number is the goal number</li>
-        <li>1st star can be achieved by getting to a goal number</li>
-        <li>2nd star can be achieved by finding the shortest path</li>
-        <li>Above, we have found the number, but not the shortest path</li>
+      <ul class="list-disc pl-10 mt-3">
+        <li>You start with 400 points</li>
+        <li>Each strike loses 100 points</li>
+        <li>You can keep playing after 4 strikes, it's not all about points</li>
       </ul>
       <div class="divider"></div>
 
@@ -67,10 +43,9 @@
       </p>
       <div class="flex flex-col mt-4 items-center">
         <div class="chat chat-end w-80">
-          <div class="chat-bubble">JamCatWow Anagrams #34 <br>
-            ⬜️ 485 timed, 865 total <br>
-            ⚪️ 20% timed, 38% total <br>
-            jamcatwow.com/games/anagrams
+          <div class="chat-bubble">JamCatWow Hashbang #34 <br>
+             200/400 <br>
+            jamcatwow.com/games/hashbang
           </div>
         </div>
         <div class="flex mt-4">
