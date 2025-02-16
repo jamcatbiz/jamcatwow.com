@@ -4,15 +4,20 @@
   // @ts-ignore
   import IconEmpty from "~icons/fa6-regular/star"
   // @ts-ignore
-  import IconMin from "~icons/fa6-solid/star"
-  // @ts-ignore
   import IconSolved from "~icons/fa6-solid/star"
+    // @ts-ignore
+  import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 
 <div class="flex w-full justify-center">
-  <div class="p-6 space-y-4">
+  <div class="px-6 pb-10">
+    <a href="/games/hashbang">
+      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
+        <IconBack /> Back to game
+      </button>
+    </a>
     <h3 class="text-2xl font-serif font-semibold">How To Play</h3>
-    <p class="">Race to calculate goal numbers using arithmetic.</p>
+    <p class="mt-2">Race to calculate goal numbers using arithmetic.</p>
     <div class="instructions font-light">
       <ul class="list-disc pl-10">
         <li>There are 3 goal numbers</li>
@@ -23,6 +28,7 @@
         <li>Get one star for finding the shortest path to a goal number</li>
         <li>New puzzles released daily, midnight est</li>
       </ul>
+      <div class="divider"></div>
 
       <h3 class="text-2xl font-serif font-semibold mt-4">Scoring</h3>
       <div class="flex justify-center">
@@ -52,9 +58,10 @@
         <li>2nd star can be achieved by finding the shortest path</li>
         <li>Above, we have found the number, but not the shortest path</li>
       </ul>
+      <div class="divider"></div>
 
       <h3 class="text-2xl font-serif font-semibold mt-4">Sharing</h3>
-      <p>
+      <p class="mt-2">
         You can share using any button that looks like the below, and you'll
         share a message that looks like the preview.
       </p>
@@ -73,18 +80,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  ul {
-    margin: 0.5rem 0rem;
-  }
-
-  .exitContainer {
-    justify-content: right;
-    display: flex;
-  }
-
-  .exit {
-    font-size: 15px;
-  }
-</style>

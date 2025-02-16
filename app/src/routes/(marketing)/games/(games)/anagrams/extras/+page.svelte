@@ -1,20 +1,27 @@
 <script lang="ts">
   import { todaysGame, yesterdaysGame } from "$anagrams/state.svelte"
 
-  // import Support from '$anagrams/_components/Support.svelte';
   import ShareButton from "$anagrams/_components/ShareButton.svelte"
+  // @ts-ignore
+  import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 
+
 <div class="flex justify-center">
-  <div class="p-6">
+  <div class="px-6 pb-10">
+    <a href="/games/anagrams">
+      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
+        <IconBack /> Back to game
+      </button>
+    </a>
     <h3 class="text-2xl font-semibold font-serif">Archive</h3>
-    <div class="font-light mt-2">
+    <div class="font-light mt-3">
       <p>Coming soon!</p>
     </div>
     <div class="divider"></div>
 
     <h3 class="text-2xl font-semibold font-serif">Yesterday's Answers</h3>
-    <h5 class="mt-2 font-semibold">
+    <h5 class="mt-3 font-semibold">
       #{yesterdaysGame.gameNumber}
       {yesterdaysGame.word.toUpperCase()}
     </h5>
@@ -38,7 +45,7 @@
     <div class="space-y-2">
       <header class="text-2xl font-bold font-serif">Support</header>
 
-      <div class="font-light">
+      <div class="font-light mt-3">
         The easiest way to support us is to share our game and play with your
         favorite people, but check out these other ways too!
       </div>

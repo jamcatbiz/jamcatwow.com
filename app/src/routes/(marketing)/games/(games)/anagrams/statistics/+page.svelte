@@ -10,11 +10,18 @@
 
   import Scoreboard from "$anagrams/_components/Scoreboard.svelte"
   import ShareButton from "$anagrams/_components/ShareButton.svelte"
+  // @ts-ignore
+  import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 
 <div class="flex justify-center">
-  <div class="flex flex-col p-6 space-y-4">
-    <header class="text-2xl font-semibold font-serif">Stats</header>
+  <div class="px-6 pb-10">
+    <a href="/games/anagrams">
+      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
+        <IconBack /> Back to game
+      </button>
+    </a>
+    <h3 class="text-2xl font-semibold font-serif">Stats</h3>
 
     <div class="flex justify-center">
       <div class="stats stats-vertical lg:stats-horizontal">

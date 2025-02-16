@@ -4,15 +4,20 @@
   // @ts-ignore
   import IconEmpty from "~icons/fa6-regular/star"
   // @ts-ignore
-  import IconMin from "~icons/fa6-solid/star"
-  // @ts-ignore
   import IconSolved from "~icons/fa6-solid/star"
+  // @ts-ignore
+  import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 
 <div class="flex w-full justify-center">
-  <div class="p-6 space-y-4">
+  <div class="px-6 pb-10">
+    <a href="/games/numbers">
+      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
+        <IconBack /> Back to game
+      </button>
+    </a>
     <h3 class="text-2xl font-serif font-semibold">How To Play</h3>
-    <p class="">Race to calculate goal numbers using arithmetic.</p>
+    <p class="mt-3">Race to calculate goal numbers using arithmetic.</p>
     <div class="instructions font-light">
       <ul class="list-disc pl-10">
         <li>There are three goal numbers</li>
@@ -25,7 +30,7 @@
       <div class="divider"></div>
 
       <h3 class="text-2xl font-serif font-semibold mt-4">Scoring</h3>
-      <div class="flex justify-center">
+      <div class="flex justify-center mt-3">
         <div class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl">
           <div class="flex flex-col">
             <div class="flex justify-center">
@@ -86,7 +91,7 @@
       <div class="divider"></div>
 
       <h3 class="text-2xl font-serif font-semibold mt-4">Sharing</h3>
-      <p>
+      <p class="mt-3">
         You can share using any button that looks like the below, and you'll
         share a message that looks like the preview.
       </p>
@@ -106,9 +111,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  ul {
-    margin: 0.5rem 0rem;
-  }
-</style>

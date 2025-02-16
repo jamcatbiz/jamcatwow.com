@@ -70,7 +70,7 @@
 
 <article class="prose mx-auto px-6 mb-12 font-sans">
   <a href="/blog">
-    <button class="btn btn-ghost opacity-70 px-2 mb-10">
+    <button class="btn btn-ghost btn-sm opacity-70 px-2 mb-6">
       <IconBack /> All Blogs
     </button>
   </a>

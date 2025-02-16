@@ -1,17 +1,24 @@
 <script lang="ts">
   import Scoreboard from "$anagrams/_components/Scoreboard.svelte"
   import ShareButton from "$anagrams/_components/ShareButton.svelte"
+  // @ts-ignore
+  import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 
 <div class="flex w-full justify-center">
-  <div class="p-6 space-y-4">
+  <div class="px-6 pb-10">
+    <a href="/games/anagrams">
+      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
+        <IconBack /> Back to game
+      </button>
+    </a>
     <h3 class="text-2xl font-semibold font-serif">How To Play</h3>
-    <p class="">Find words by reordering letters.</p>
-    <div class="instructions font-light">
-      <p>
-        An anagram is a word created by reordering the letters of another word.
-      </p>
-      <ul class="list-disc pl-10">
+    <p class="font-medium mt-2">Find words by reordering letters.</p>
+    <p class="font-medium mt-1">
+      An anagram is a word created by reordering the letters of another word.
+    </p>
+    <div class="instructions font-light mt-1">
+      <ul class="list-disc pl-10 mt-1">
         <li>Words must be 4+ letters</li>
         <li>More letters = more points</li>
         <li>Find words for 5 minutes</li>
@@ -22,14 +29,14 @@
 
       <h3 class="text-2xl font-semibold font-serif mt-4">Scoring</h3>
       <Scoreboard thisProgress={82} thisPoints={280} />
-      <ul class="list-disc pl-10">
+      <ul class="list-disc pl-10 font-light mt-3">
         <li>Rectangle holds points, the more the better</li>
         <li>Circle holds % of words found, ~22% in five minutes is par</li>
       </ul>
       <div class="divider"></div>
 
-      <h3 class="text-2xl font-semibold font-serif mt-4 mb-1">Sharing</h3>
-      <p>
+      <h3 class="text-2xl font-semibold font-serif mt-4">Sharing</h3>
+      <p class="mt-3">
         You can share using any button that looks like the below, and you'll
         share a message that looks like the preview.
       </p>
@@ -48,18 +55,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  ul {
-    margin: 0.5rem 0rem;
-  }
-
-  .exitContainer {
-    justify-content: right;
-    display: flex;
-  }
-
-  .exit {
-    font-size: 15px;
-  }
-</style>
