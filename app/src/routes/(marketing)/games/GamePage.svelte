@@ -8,9 +8,18 @@
       <div
         class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent pb-2"
       >
-        We've got games
+        Games Everyday
       </div>
       <div class="mt-4 text-xl font-bold">
+        Every game,
+        <a
+          href="/archive"
+          class="underline decoration-secondary decoration-[3px] md:decoration-[4px]"
+        >
+          every day,
+        </a>
+        midnight EST
+        <div class="divider m-2"></div>
         Subscribe for full access to
         <a
           href="/archive"
@@ -26,38 +35,33 @@
           our scoreboard
         </a>
       </div>
+      <a 
+        href="/games/anagrams"
+        class=""
+      >
+        <button class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow shadow-md shadow-primary border-none px-6 mt-8">
+          Play Now
+        </button>
+      </a>
     </div>
 
     <div
-      class="flex gap-6 mt-12 max-w-[1064px] mx-auto place-content-center flex-wrap"
+      class="flex gap-4 mt-12 max-w-[1064px] mx-auto place-content-center flex-wrap"
     >
       {#each contents.games as game}
-        <a href={game.link} class="pb-4" target={game.newPage ? "_blank" : ""}>
+        <a href={game.link} class="" target={game.newPage ? "_blank" : ""}>
           <div
-            class="card bg-base-300 w-[270px] min-h-[300px] flex-none shadow-md shadow-{game.color}"
+            class="card bg-base-300 w-[200px] min-h-[230px] flex-none shadow-md"
           >
-            <div class="card-body items-center text-center p-[24px] pt-[32px]">
-              <div>
-                <!-- <svg
-                  width="50px"
-                  height="50px"
-                  class="mb-2 mt-1 stroke-current text-primary"
-                  viewBox={game.svgViewBow}
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <!-- eslint-disable-next-line svelte/no-at-html-tags --
-                  {@html game.svgContent}
-                </svg> -->
-              </div>
-              <h2 class="card-title text-{game.color} font-serif">
+            <div class="card-body items-center text-center p-[20px] pt-[24px]">
+              <h2 class="card-title text-{game.color}">
                 {game.name}
               </h2>
-              <p class="text-sm mt-4 opacity-85">
+              <p class="text-sm opacity-80">
                 {game.description}
               </p>
               <button
-                class="btn btn-block btn-outline btn-{game.color} min-w-[100px]"
+                class="btn btn-block btn-sm btn-neutral min-w-[100px]"
               >
                 {game.linkText ? game.linkText : "Play"}
               </button>

@@ -2,7 +2,7 @@ export const contents = {
   games: [
     {
       name: "Anagrams",
-      description: 'Find as many words as you can before time runs out. The more letters in your anagram, the more points.',
+      description: 'Find as many words as you can before time runs out. The more letters, the more points.',
       link: "/games/anagrams",
       linkText: "Play",
       newPage: false,
@@ -11,7 +11,7 @@ export const contents = {
     },
     {
       name: "Ladders",
-      description: 'Classic word ladders puzzle. Change one letter at a time, building your way from one word to the next, step by step.',
+      description: 'Classic word ladders puzzle. Change one letter at a time, step by step, from one word to the next.',
       link: "/games/ladders",
       linkText: "Play",
       newPage: false,
@@ -29,7 +29,7 @@ export const contents = {
     },
     {
       name: "Hashbang",
-      description: 'Swap letters to find a function hashtag crossword. Fewer swaps the better.',
+      description: 'Swap letters to find a valid hashtag crossword. Fewer swaps the better.',
       link: "/games/hashbang",
       linkText: "Play",
       newPage: false,
