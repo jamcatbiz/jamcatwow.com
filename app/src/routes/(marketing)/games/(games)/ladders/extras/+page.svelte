@@ -22,7 +22,9 @@
     <h5 class="font-bold mt-3">
       #{yesterdaysGame.gameNumber}
     </h5>
-    <p>Coming soon!</p>
+    {#each yesterdaysGame.solutions[0] as word}
+      <p class="font-mono">{word.toUpperCase()}</p>
+    {/each}
     <div class="divider"></div>
     <div class="space-y-2">
       <header class="text-2xl font-serif font-semibold">Support</header>

@@ -18,7 +18,7 @@ export const yesterdaysDateIso = yd.iso;
 export const yesterdaysDateLocale = yd.locale;
 export const todaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const yesterdaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
-export const timerDuration = $state(1000 * 60 * 0.2);
+export const timerDuration = $state(1000 * 60 * 5);
 export const currentGuess: Array<string> = $state([]);
 export const hasResumed = new LocalStorage('jamcat_anagrams_hasResumed', false, true, (str: string) => {return (str === 'true')});
 export const keyData: KeyData = $state({});

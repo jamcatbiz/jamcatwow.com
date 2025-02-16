@@ -22,7 +22,9 @@
     <h5 class="font-bold mt-3">
       #{yesterdaysGame.gameNumber}
     </h5>
-    <p>Coming soon!</p>
+    {#each todaysGame.solutions as goal, i}
+      {goal.min_operations}
+    {/each}
     <div class="divider"></div>
     <div class="space-y-2">
       <header class="text-2xl font-serif font-semibold">Support</header>

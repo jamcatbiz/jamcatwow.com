@@ -18,8 +18,8 @@
     last_time = time
 
     if (!hasGameOverShown.val && elapsedTime.val >= timerDuration) {
-      anagrams_time_over.showModal()
       hasGameOverShown.val = true
+      anagrams_time_over.showModal()
     }
   })()
 </script>
