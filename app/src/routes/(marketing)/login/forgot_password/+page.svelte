@@ -9,7 +9,7 @@
   <title>Forgot Password</title>
 </svelte:head>
 
-<h1 class="text-2xl font-semibold font-serif mb-6">Forgot Password</h1>
+<h1 class="text-2xl font-semibold font-serif my-6">Forgot Password</h1>
 <Auth
   supabaseClient={data.supabase}
   view="forgotten_password"
@@ -20,7 +20,7 @@
   appearance={sharedAppearance}
   additionalData={undefined}
 />
-<div class="opacity-80 mt-4">
+<div class="opacity-70 mt-4">
   Remember your password? 
   <a class="underline" href="/login/sign_in">Sign in</a>.
 </div>

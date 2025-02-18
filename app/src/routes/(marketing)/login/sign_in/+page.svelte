@@ -44,7 +44,7 @@
     <span>Email verified! Please sign in.</span>
   </div>
 {/if}
-<h1 class="text-2xl font-semibold font-serif mb-4">Sign In</h1>
+<h1 class="text-2xl font-semibold font-serif my-6">Sign In</h1>
 <Auth
   supabaseClient={data.supabase}
   view="sign_in"
@@ -55,9 +55,9 @@
   appearance={sharedAppearance}
   additionalData={undefined}
 />
-<div class="opacity-80 mt-4">
+<div class="opacity-70 mt-4">
   <a class="underline" href="/login/forgot_password">Forgot password?</a>
 </div>
-<div class="opacity-80 mt-3">
+<div class="opacity-70 mt-3">
   Don't have an account? <a class="underline" href="/login/sign_up">Sign up</a>.
 </div>

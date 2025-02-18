@@ -9,7 +9,7 @@
   <title>Sign up</title>
 </svelte:head>
 
-<h1 class="text-2xl font-semibold font-serif mb-6">Sign Up</h1>
+<h1 class="text-2xl font-semibold font-serif my-6">Sign Up</h1>
 <Auth
   supabaseClient={data.supabase}
   view="sign_up"
