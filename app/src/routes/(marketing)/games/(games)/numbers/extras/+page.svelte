@@ -22,9 +22,20 @@
     <h5 class="font-bold mt-3">
       #{yesterdaysGame.gameNumber}
     </h5>
-    {#each todaysGame.solutions as goal, i}
-      {goal.min_operations}
-    {/each}
+    <div class="flex flex-col">
+      {#each yesterdaysGame.goalNumbers as goalNumber}
+        <div class="flex flex-col items-center">
+          <p class="font-semibold mt-3">
+            {goalNumber}:
+          </p>
+          {#each yesterdaysGame.solutions[goalNumber].min_operations as step}
+            <p class="font-mono tracking-tight">
+              {step}
+            </p>
+          {/each}
+        </div>
+      {/each}
+    </div>
     <div class="divider"></div>
     <div class="space-y-2">
       <header class="text-2xl font-serif font-semibold">Support</header>

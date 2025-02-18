@@ -7,7 +7,7 @@
   import IconSolved from "~icons/fa6-solid/star"
   // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
-  import { todaysGame } from "$numbers/state.svelte"
+  import { answers, todaysGame } from "$numbers/state.svelte"
 </script>
 
 <div class="flex w-full justify-center">
@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="indicator">
-          <span class="indicator-item indicator-bottom indicator-center badge badge-accent">+50</span>
+          <span class="indicator-item indicator-bottom indicator-center badge badge-accent">+45</span>
           <div class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl">
             <div class="flex flex-col">
               <div class="flex justify-center">
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="indicator">
-          <span class="indicator-item indicator-bottom indicator-center badge badge-accent">+20</span>
+          <span class="indicator-item indicator-bottom indicator-center badge badge-accent">+15</span>
           <div class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl">
             <div class="flex flex-col">
               <div class="flex justify-center">
@@ -101,7 +101,14 @@
           <div class="chat-bubble">
             JamCatWow Numbers #34 <br>
             {todaysGame.goalNumbers[0]} {todaysGame.goalNumbers[1]} {todaysGame.goalNumbers[2]}<br>
-            . ☆ . ★ . ★ .<br>
+            {#each todaysGame.goalNumbers as goalNumber}
+              {#if goalNumber in answers && answers[goalNumber].solved}
+                . ★ .
+              {:else}
+                . ☆ .
+              {/if}
+            {/each}
+            <br>
             270 points<br>
             jamcatwow.com/games/numbers
           </div>

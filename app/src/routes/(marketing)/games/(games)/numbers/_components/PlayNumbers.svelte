@@ -6,6 +6,7 @@
     answers,
     currentUserStep,
     livePlayNumbers,
+    points,
     todaysGame,
     userSteps,
   } from "$numbers/state.svelte"
@@ -54,31 +55,21 @@
         solutionSteps.length == todaysGame.solutions[str].min_operations.length
           ? true
           : false
-      const maxSolved =
-        solutionSteps.length == todaysGame.solutions[str].max_operations.length
-          ? true
-          : false
       if (solution in answers) {
-        if (minSolved) {
-          answers[str].minSolved = minSolved
-          answers[str].solutions.min = solutionSteps
-        }
-        if (maxSolved) {
-          answers[str].maxSolved = maxSolved
-          answers[str].solutions.max = solutionSteps
-        }
+        const dist = answers[solution].steps.length - solutionSteps.length
+        if (dist > 0) {
+          points.val += 15 * dist
+          answers[solution].bonusPoints += 15 * dist
+          answers[solution].steps = solutionSteps
+        } 
       } else {
         answers[str] = {
           number: solution,
           solved: true,
-          minSolved: minSolved,
-          maxSolved: maxSolved,
-          solutions: {
-            min: minSolved ? solutionSteps : [],
-            max: maxSolved ? solutionSteps : [],
-            first: solutionSteps,
-          },
+          steps:  solutionSteps,
+          bonusPoints: (minSolved ? 45 : 45 - (15 * (solutionSteps.length - todaysGame.solutions[solution].min_operations.length)))
         }
+        points.val += 100 + answers[str].bonusPoints
       }
     }
   }

@@ -24,6 +24,7 @@
         <li>Change one letter at a time, step by step</li>
         <li>Work from the top or bottom word</li>
         <li>Use hints for help, at the cost of points</li>
+        <li>Words gained from hints will show in <span class="text-error font-semibold">red</span></li>
       </ul>
       <div class="divider"></div>
 

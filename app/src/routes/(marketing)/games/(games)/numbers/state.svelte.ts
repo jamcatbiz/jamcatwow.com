@@ -60,6 +60,7 @@ export const yesterdaysDateLocale = yd.locale;
 export const todaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const yesterdaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const timerDuration = $state(1000 * 60 * 3);
+export const points = $state({val: 0})
 export const hasResumed = new LocalStorage('jamcat_numbers_hasResumed', false, true, (str: string) => {return (str === 'true')});
 export const lastPlayedDate = new LocalStorage('jamcat_numbers_lastPlayedDate', 'YYYY-MM-DD', false, (str: string) => {return str});
 export const hasPlayedToday = $state(lastPlayedDate.val === todaysDateIso ? true : false);

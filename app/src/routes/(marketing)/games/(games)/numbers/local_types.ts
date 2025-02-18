@@ -8,9 +8,9 @@ export type Game = {
     [key: string]: {
       min_operations: Array<string>;
       max_operations: Array<string>;
-    },
-  },
-  gameNumber: number,
+    }
+  }
+  gameNumber: number;
 }
 
 export type Step = {
@@ -26,13 +26,8 @@ export type Answers = {
   [key: string]: {
     number: number;
     solved: boolean;
-    minSolved: boolean;
-    maxSolved: boolean;
-    solutions: {
-      min: Array<string>;
-      max: Array<string>;
-      first: Array<string>;
-    }
+    steps: Array<string>;
+    bonusPoints: number;
   }
 }
 
