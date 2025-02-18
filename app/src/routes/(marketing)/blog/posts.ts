@@ -19,7 +19,7 @@ const blogPosts: BlogPost[] = [
     title: "Hello World!",
     description: "A blog about this site's origin and destiny. How dramatic.",
     link: "/blog/hello_world",
-    date: "2023-03-13",
+    date: "2025-02-17",
     badges: [],
   },
   {

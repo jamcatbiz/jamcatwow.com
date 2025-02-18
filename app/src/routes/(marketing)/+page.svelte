@@ -45,7 +45,7 @@
       </div>
       <div class="mt-6 md:mt-2">
         <a href="/games">
-          <button class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow shadow-md shadow-primary border-none px-6">
+          <button class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none px-6">
             Play Now
           </button>
         </a>

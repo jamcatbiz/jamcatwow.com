@@ -1,26 +1,8 @@
 <p class="lead">A blog about this site's origin and destiny. How dramatic.</p>
 
-<p>
-  This is a sample blog post to demonstrate the blog engine. It shows some of
-  the formatting options included in the template.
-</p>
-
-<h3>Section Titles are great</h3>
-
-<p>As are more paragraphs.</p>
-
-<blockquote>
-  <p>Block quotes are styled</p>
-</blockquote>
-
-<pre><code class="language-bash"
-    ># Code blocks work too!
-npm install 
-</code></pre>
+<h3>A Story Begins</h3>
 
 <p>
-  Check out more formatting options like lists, headers, and more in <a
-    href="https://play.tailwindcss.com/uj1vGACRJA?layout=preview"
-    >the tailwind/typograpy docs</a
-  >.
+  JamCatWow is a passion project that originally grew from a desire to share playing word games with my family.
+  Along the way, it has become a creative outlet and a way to practice some of my favorite trades.
 </p>
