@@ -114,7 +114,7 @@
             <button
               aria-label="placeholder"
               disabled
-              class="{btnStyle}"
+              class={btnStyle}
               id="number-{i}"
             ></button>
           </div>
@@ -150,7 +150,7 @@
             <button
               aria-label="placeholder"
               disabled
-              class="{btnStyle}"
+              class={btnStyle}
               id="number-{i}"
             ></button>
           </div>

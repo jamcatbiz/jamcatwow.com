@@ -3,6 +3,8 @@
   import ShareButton from "$numbers/_components/ShareButton.svelte"
   // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
+
+  const playNumbersStyle = "w-14 h-12 text-lg font-bold"
 </script>
 
 <div class="flex w-full justify-center">
@@ -22,10 +24,26 @@
     <h5 class="font-bold mt-3">
       #{yesterdaysGame.gameNumber}
     </h5>
+    <div class="flex flex-col items-center text-center mt-3">
+      <div class="flex">
+        {#each [0, 1, 2] as i}
+          <p class={playNumbersStyle}>
+            {yesterdaysGame.playNumbers[i]}
+          </p>
+        {/each}
+      </div>
+      <div class="flex">
+        {#each [3, 4, 5] as i}
+          <p class={playNumbersStyle}>
+            {yesterdaysGame.playNumbers[i]}
+          </p>
+        {/each}
+      </div>
+    </div>
     <div class="flex flex-col">
       {#each yesterdaysGame.goalNumbers as goalNumber}
         <div class="flex flex-col items-center">
-          <p class="font-semibold mt-3">
+          <p class="font-semibold text-lg mt-3">
             {goalNumber}:
           </p>
           {#each yesterdaysGame.solutions[goalNumber].min_operations as step}

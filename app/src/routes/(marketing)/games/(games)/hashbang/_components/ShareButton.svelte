@@ -5,8 +5,8 @@
   import IconShare from "~icons/fa6-regular/share-from-square"
 
   // @ts-ignore
-  import {Toastify, type ToastifyConfigurationObject} from "toastify-js"
-  
+  import { Toastify, type ToastifyConfigurationObject } from "toastify-js"
+
   const shareMessage: string = `Hashbang #${todaysGame.gameNumber}
 f
 
