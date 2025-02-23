@@ -1,6 +1,6 @@
 <script lang="ts">
   import { todaysGame, yesterdaysGame } from "$numbers/state.svelte"
-  import ShareButton from "$numbers/_components/ShareButton.svelte";
+  import ShareButton from "$numbers/_components/ShareButton.svelte"
   // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
 </script>

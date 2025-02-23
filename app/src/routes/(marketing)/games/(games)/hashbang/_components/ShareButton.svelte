@@ -4,8 +4,9 @@
   // @ts-ignore
   import IconShare from "~icons/fa6-regular/share-from-square"
 
-  import { Toastify, type ToastifyConfigurationObject } from "toastify-js"
-
+  // @ts-ignore
+  import {Toastify, type ToastifyConfigurationObject} from "toastify-js"
+  
   const shareMessage: string = `Hashbang #${todaysGame.gameNumber}
 f
 
@@ -52,6 +53,9 @@ jamcatwow.com/games/hashbang`
   }
 </script>
 
-<button class="btn btn-wide bg-gradient-to-r from-primary to-accent shadow-primary shadow-lg text-primary-content" onclick={handleShare}>
+<button
+  class="btn btn-wide bg-gradient-to-r from-primary to-accent shadow-primary shadow-lg text-primary-content"
+  onclick={handleShare}
+>
   <span><IconShare /></span><span>Share</span>
 </button>

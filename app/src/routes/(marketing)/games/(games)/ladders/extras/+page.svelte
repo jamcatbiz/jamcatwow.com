@@ -1,7 +1,7 @@
 <script lang="ts">
   import { todaysGame, yesterdaysGame } from "$ladders/state.svelte"
-  import ShareButton from "$ladders/_components/ShareButton.svelte";
-    // @ts-ignore
+  import ShareButton from "$ladders/_components/ShareButton.svelte"
+  // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 

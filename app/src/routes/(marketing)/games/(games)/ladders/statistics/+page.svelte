@@ -15,7 +15,7 @@
     </a>
     <header class="text-2xl font-serif font-semibold">Stats</header>
     <p>Coming soon!</p>
-    <div class="flex justify-center mt-2 ">
+    <div class="flex justify-center mt-2">
       <ShareButton />
     </div>
   </div>

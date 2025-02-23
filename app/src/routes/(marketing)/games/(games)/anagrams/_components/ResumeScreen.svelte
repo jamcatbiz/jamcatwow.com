@@ -17,11 +17,13 @@
 <div class="flex flex-col items-center m-10">
   <p class="mt-6 text-xl">Keep playing today's game?</p>
   <div class="mt-12">
-    <button class="btn btn-wide btn-primary shadow-md" onclick={resume}>Continue</button>
+    <button class="btn btn-wide btn-primary shadow-md" onclick={resume}
+      >Continue</button
+    >
   </div>
   <div class="mt-4">
     <a href="/subscriptions">
-      <button 
+      <button
         class="btn btn-wide shadow-md shadow-primary"
         aria-label="subscribe"
       >

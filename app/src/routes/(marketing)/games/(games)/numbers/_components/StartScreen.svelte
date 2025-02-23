@@ -37,4 +37,3 @@
     <p>{todaysDateLocale}</p>
   </div>
 </div>
-

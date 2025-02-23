@@ -1,4 +1,9 @@
-import { activeNumberIndex, activeOperation, currentUserStep, operations } from "$numbers/state.svelte"
+import {
+  activeNumberIndex,
+  activeOperation,
+  currentUserStep,
+  operations,
+} from "$numbers/state.svelte"
 
 export function reset() {
   if (activeOperation.val !== "") {

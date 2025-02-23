@@ -3,11 +3,10 @@
 
   // @ts-ignore
   import IconShare from "~icons/fa6-regular/share-from-square"
-
-  import { Toastify, type ToastifyConfigurationObject } from "toastify-js"
-
-  const shareMessage: string = 
-`JamCatWow Numbers #34
+  // @ts-ignore
+  import {Toastify, type ToastifyConfigurationObject} from "toastify-js"
+  
+  const shareMessage: string = `JamCatWow Numbers #34
 ☆★★
 270 points
 jamcatwow.com/games/numbers`
@@ -53,6 +52,9 @@ jamcatwow.com/games/numbers`
   }
 </script>
 
-<button class="btn btn-wide bg-gradient-to-r from-primary to-accent shadow-primary shadow-lg border-none text-primary-content" onclick={handleShare}>
+<button
+  class="btn btn-wide bg-gradient-to-r from-primary to-accent shadow-primary shadow-lg border-none text-primary-content"
+  onclick={handleShare}
+>
   Share
 </button>

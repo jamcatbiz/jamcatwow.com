@@ -1,5 +1,5 @@
 <script lang="ts">
-    type PlanFeatureRow = {
+  type PlanFeatureRow = {
     name: string
     freeIncluded?: boolean
     subscriberIncluded?: boolean
@@ -70,8 +70,8 @@
         <p>
           Yup! The games published on this website are free to play daily.
           However, we offer some fun features like game archives and data
-          visualization to our subscribers and premium supporters. You can
-          read more about those features below.
+          visualization to our subscribers and premium supporters. You can read
+          more about those features below.
         </p>
       </div>
     </div>
@@ -82,8 +82,8 @@
       </div>
       <div class="collapse-content">
         <p>
-          We aim to become profitable and support literacy, math competency,
-          and early education through daily socialized fun! See <a
+          We aim to become profitable and support literacy, math competency, and
+          early education through daily socialized fun! See <a
             class="font-bold underline text-error"
             href="/mission">our mission</a
           >!
@@ -98,8 +98,7 @@
       <div class="collapse-content">
         <p>
           We make money via ads,
-          <a href="/shop" class="font-bold underline text-error">merch</a
-          >,
+          <a href="/shop" class="font-bold underline text-error">merch</a>,
           <a href="/subscriptions" class="font-bold underline text-error"
             >subscriptions</a
           >, and

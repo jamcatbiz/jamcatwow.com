@@ -3,7 +3,7 @@
 </script>
 
 <div class="divider"></div>
-<div class="flex justify-center">  
+<div class="flex justify-center">
   {#if Object.keys(guesses.val).length == 0}
     <p>Your answers will display here</p>
   {:else}

@@ -61,13 +61,18 @@
           points.val += 15 * dist
           answers[solution].bonusPoints += 15 * dist
           answers[solution].steps = solutionSteps
-        } 
+        }
       } else {
         answers[str] = {
           number: solution,
           solved: true,
-          steps:  solutionSteps,
-          bonusPoints: (minSolved ? 45 : 45 - (15 * (solutionSteps.length - todaysGame.solutions[solution].min_operations.length)))
+          steps: solutionSteps,
+          bonusPoints: minSolved
+            ? 45
+            : 45 -
+              15 *
+                (solutionSteps.length -
+                  todaysGame.solutions[solution].min_operations.length),
         }
         points.val += 100 + answers[str].bonusPoints
       }
@@ -147,7 +152,7 @@
               id="number-{i}"
             ></button>
           </div>
-          {:else if i === activeNumberIndex.val}
+        {:else if i === activeNumberIndex.val}
           <div class="">
             <button
               class="btn btn-neutral btn-disabled m-0.5 w-16 h-16 text-lg"

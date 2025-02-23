@@ -42,9 +42,10 @@
       </p>
       <div class="flex flex-col mt-4 items-center">
         <div class="chat chat-end w-80">
-          <div class="chat-bubble">JamCatWow Anagrams #34 <br>
-            ⬜️ 485 timed, 865 total <br>
-            ⚪️ 20% timed, 38% total <br>
+          <div class="chat-bubble">
+            JamCatWow Anagrams #34 <br />
+            ⬜️ 485 timed, 865 total <br />
+            ⚪️ 20% timed, 38% total <br />
             jamcatwow.com/games/anagrams
           </div>
         </div>

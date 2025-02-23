@@ -29,7 +29,7 @@
           <div class="stat-title">Days Played</div>
           <div class="stat-value">{statGamesPlayed.val}</div>
         </div>
-      
+
         <div class="stat place-items-center">
           <div class="stat-title">Words Found</div>
           <div class="stat-value">{statWordsFound.val}</div>

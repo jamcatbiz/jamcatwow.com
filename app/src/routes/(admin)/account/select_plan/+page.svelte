@@ -15,7 +15,10 @@
   <div class="flex flex-col w-full px-6">
     <div>
       <h1 class="text-2xl font-bold mb-2">Select a Plan</h1>
-      <PricingModule callToAction="Get Started" highlightedPlanId="subscriber" />
+      <PricingModule
+        callToAction="Get Started"
+        highlightedPlanId="subscriber"
+      />
       <PricingHelp />
     </div>
   </div>

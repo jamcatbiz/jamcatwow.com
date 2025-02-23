@@ -29,7 +29,9 @@
       </li>
       <li class="md:mx-2"><a href="/games" class="btn btn-ghost">Games</a></li>
       <li class="md:mx-2"><a href="/blog" class="btn btn-ghost">Blog</a></li>
-      <li class="md:mx-2"><a href="/account" class="btn btn-ghost">Account</a></li>
+      <li class="md:mx-2">
+        <a href="/account" class="btn btn-ghost">Account</a>
+      </li>
       <li class="md:mx-0">
         <a href="/search" aria-label="Search">
           <svg

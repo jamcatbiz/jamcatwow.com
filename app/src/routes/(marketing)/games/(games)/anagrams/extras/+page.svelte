@@ -6,7 +6,6 @@
   import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 
-
 <div class="flex justify-center">
   <div class="px-6 pb-10">
     <a href="/games/anagrams">
@@ -25,7 +24,9 @@
       #{yesterdaysGame.gameNumber}
       {yesterdaysGame.word.toUpperCase()}
     </h5>
-    <p class="font-light">{Object.keys(yesterdaysGame.answers).length} answers</p>
+    <p class="font-light">
+      {Object.keys(yesterdaysGame.answers).length} answers
+    </p>
     <div class="divider"></div>
     <div class="grid grid-cols-6 gap-2 mx-2">
       {#each Object.keys(yesterdaysGame.answers) as answer}
@@ -72,4 +73,3 @@
     </div>
   </div>
 </div>
-

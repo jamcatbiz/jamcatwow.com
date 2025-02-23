@@ -1,6 +1,6 @@
 import { sveltekit } from "@sveltejs/kit/vite"
 import { defineConfig } from "vitest/config"
-import Icons from 'unplugin-icons/vite'
+import Icons from "unplugin-icons/vite"
 import { buildAndCacheSearchIndex } from "./src/lib/build_index"
 
 export default defineConfig({
@@ -8,7 +8,7 @@ export default defineConfig({
     sveltekit(),
     Icons({
       autoInstall: true,
-      compiler: 'svelte',
+      compiler: "svelte",
     }),
     {
       name: "vite-build-search-index",

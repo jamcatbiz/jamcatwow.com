@@ -5,7 +5,7 @@
   import IconEmpty from "~icons/fa6-regular/star"
   // @ts-ignore
   import IconSolved from "~icons/fa6-solid/star"
-    // @ts-ignore
+  // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 
@@ -43,8 +43,9 @@
       </p>
       <div class="flex flex-col mt-4 items-center">
         <div class="chat chat-end w-80">
-          <div class="chat-bubble">JamCatWow Hashbang #34 <br>
-             200/400 <br>
+          <div class="chat-bubble">
+            JamCatWow Hashbang #34 <br />
+            200/400 <br />
             jamcatwow.com/games/hashbang
           </div>
         </div>

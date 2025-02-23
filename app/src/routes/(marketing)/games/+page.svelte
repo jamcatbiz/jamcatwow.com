@@ -1,5 +1,5 @@
 <script lang="ts">
-  import GamePage from "./GamePage.svelte";
+  import GamePage from "./GamePage.svelte"
 </script>
 
 <GamePage />

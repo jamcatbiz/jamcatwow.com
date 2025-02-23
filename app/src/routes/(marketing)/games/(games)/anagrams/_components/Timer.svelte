@@ -4,7 +4,7 @@
     elapsedTime,
     hasGameOverShown,
   } from "$anagrams/state.svelte"
-  import ShareButton from "$anagrams/_components/ShareButton.svelte";
+  import ShareButton from "$anagrams/_components/ShareButton.svelte"
 
   let last_time: number = window.performance.now()
   let frame: number
@@ -34,10 +34,10 @@
       >
         Share your score,
       </span>
-       keep playing for more!
+      keep playing for more!
     </p>
     <p class="mt-2">
-      Come back tomorrow, 
+      Come back tomorrow,
       <span
         class="font-semibold underline decoration-secondary decoration-[2px] md:decoration-[2px]"
       >
@@ -57,7 +57,7 @@
     </div>
     <div class="mt-3">
       <a href="/subscriptions">
-        <button 
+        <button
           class="btn btn-wide shadow-md shadow-primary"
           aria-label="subscribe"
         >
@@ -68,9 +68,9 @@
     <div class="divider"></div>
     <div class="">
       <a href="/games/numbers">
-        <button 
-        class="btn btn-wide btn-sm btn-neutral shadow-md"
-        aria-label="next_game"
+        <button
+          class="btn btn-wide btn-sm btn-neutral shadow-md"
+          aria-label="next_game"
         >
           Next Game
         </button>
@@ -78,9 +78,9 @@
     </div>
     <div class="mt-3">
       <a href="/scoreboard">
-        <button 
-        class="btn btn-wide btn-sm btn-neutral shadow-md"
-        aria-label="scoreboard"
+        <button
+          class="btn btn-wide btn-sm btn-neutral shadow-md"
+          aria-label="scoreboard"
         >
           Scoreboard
         </button>
@@ -88,7 +88,7 @@
     </div>
     <div class="mt-3">
       <a href="/archive">
-        <button 
+        <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
           aria-label="archive"
         >
@@ -118,4 +118,3 @@
   >
   </progress>
 </div>
-

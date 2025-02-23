@@ -35,11 +35,10 @@
           our scoreboard
         </a>
       </div>
-      <a 
-        href="/games/anagrams"
-        class=""
-      >
-        <button class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none px-6 mt-8">
+      <a href="/games/anagrams" class="">
+        <button
+          class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none px-6 mt-8"
+        >
           Play Now
         </button>
       </a>
@@ -60,9 +59,7 @@
               <p class="text-sm opacity-80">
                 {game.description}
               </p>
-              <button
-                class="btn btn-block btn-sm btn-neutral min-w-[100px]"
-              >
+              <button class="btn btn-block btn-sm btn-neutral min-w-[100px]">
                 {game.linkText ? game.linkText : "Play"}
               </button>
             </div>
@@ -78,9 +75,7 @@
       >
         The Archives
       </div>
-      <p>
-        Coming soon!
-      </p>
+      <p>Coming soon!</p>
     </div>
   </div>
   <div class="flex justify-center mb-10">
@@ -90,9 +85,7 @@
       >
         The Scoreboard
       </div>
-      <p>
-        Coming soon!
-      </p>
+      <p>Coming soon!</p>
     </div>
   </div>
 </div>

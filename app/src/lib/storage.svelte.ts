@@ -1,102 +1,107 @@
-import { tick } from 'svelte';
+import { tick } from "svelte"
 
 export class LocalStorage<T> {
-	#key: string;
-	#version = $state(0);
-	#listeners = 0;
-	#value: T | undefined;
+  #key: string
+  #version = $state(0)
+  #listeners = 0
+  #value: T | undefined
 
-	#handler = (e: StorageEvent) => {
-		if (e.storageArea !== localStorage) return;
-		if (e.key !== this.#key) return;
+  #handler = (e: StorageEvent) => {
+    if (e.storageArea !== localStorage) return
+    if (e.key !== this.#key) return
 
-		this.#version += 1;
-	};
+    this.#version += 1
+  }
 
-	constructor(key: string, initial?: T, overwrite=false, convert?: (str: string) => T) {
-		this.#key = key;
-    this.#value = initial;
+  constructor(
+    key: string,
+    initial?: T,
+    overwrite = false,
+    convert?: (str: string) => T,
+  ) {
+    this.#key = key
+    this.#value = initial
 
-		if (typeof localStorage !== 'undefined') {
+    if (typeof localStorage !== "undefined") {
       let val = localStorage.getItem(key)
-			if (val === null || overwrite ) {
-				localStorage.setItem(key, JSON.stringify(initial));
-			} else {
-        if (typeof convert !== 'undefined') {
+      if (val === null || overwrite) {
+        localStorage.setItem(key, JSON.stringify(initial))
+      } else {
+        if (typeof convert !== "undefined") {
           this.#value = convert(val)
         }
       }
-		}
-	}
+    }
+  }
 
-	get val() {
-		this.#version;
+  get val() {
+    this.#version
 
-		const root =
-			typeof localStorage !== 'undefined'
-				? JSON.parse(localStorage.getItem(this.#key) as any)
-				: this.#value;
+    const root =
+      typeof localStorage !== "undefined"
+        ? JSON.parse(localStorage.getItem(this.#key) as any)
+        : this.#value
 
-		const proxies = new WeakMap();
+    const proxies = new WeakMap()
 
-		const proxy = (value: unknown) => {
-			if (typeof value !== 'object' || value === null) {
-				return value;
-			}
+    const proxy = (value: unknown) => {
+      if (typeof value !== "object" || value === null) {
+        return value
+      }
 
-			let p = proxies.get(value);
+      let p = proxies.get(value)
 
-			if (!p) {
-				p = new Proxy(value, {
-					get: (target, property) => {
-						this.#version;
-						return proxy(Reflect.get(target, property));
-					},
-					set: (target, property, value) => {
-						this.#version += 1;
-						Reflect.set(target, property, value);
+      if (!p) {
+        p = new Proxy(value, {
+          get: (target, property) => {
+            this.#version
+            return proxy(Reflect.get(target, property))
+          },
+          set: (target, property, value) => {
+            this.#version += 1
+            Reflect.set(target, property, value)
 
-						if (typeof localStorage !== 'undefined') {
-							localStorage.setItem(this.#key, JSON.stringify(root));
-						}
+            if (typeof localStorage !== "undefined") {
+              localStorage.setItem(this.#key, JSON.stringify(root))
+            }
 
-						return true;
-					}
-				});
+            return true
+          },
+        })
 
-				proxies.set(value, p);
-			}
+        proxies.set(value, p)
+      }
 
-			return p;
-		};
+      return p
+    }
 
-		if ($effect.tracking()) {
-			$effect(() => {
-				if (this.#listeners === 0) {
-					window.addEventListener('storage', this.#handler);
-				}
+    if ($effect.tracking()) {
+      $effect(() => {
+        if (this.#listeners === 0) {
+          window.addEventListener("storage", this.#handler)
+        }
 
-				this.#listeners += 1;
+        this.#listeners += 1
 
-				return () => {
-					tick().then(() => {
-						this.#listeners -= 1;
-						if (this.#listeners === 0) {
-							window.removeEventListener('storage', this.#handler);
-						}
-					});
-				};
-			});
-		}
+        return () => {
+          tick().then(() => {
+            this.#listeners -= 1
+            if (this.#listeners === 0) {
+              window.removeEventListener("storage", this.#handler)
+            }
+          })
+        }
+      })
+    }
 
-		return proxy(root);
-	}
+    return proxy(root)
+  }
 
-	set val(value) {
-		if (typeof localStorage !== 'undefined') {
-			localStorage.setItem(this.#key, JSON.stringify(value));
-		}
+  set val(value) {
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem(this.#key, JSON.stringify(value))
+    }
 
-		this.#version += 1;
-	}
+    this.#version += 1
+  }
 }

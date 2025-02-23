@@ -21,6 +21,6 @@
   additionalData={undefined}
 />
 <div class="opacity-70 mt-4">
-  Remember your password? 
+  Remember your password?
   <a class="underline" href="/login/sign_in">Sign in</a>.
 </div>

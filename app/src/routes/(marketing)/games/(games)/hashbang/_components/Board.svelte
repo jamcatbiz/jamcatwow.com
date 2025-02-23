@@ -1,7 +1,7 @@
 <script lang="ts">
   import { activeCell, board, swaps, todaysGame } from "$hashbang/state.svelte"
 
-  function handleClick(i: number, j: number): void {
+  function handleClick(i: number, j: number): MouseEventHandler {
     if (i * 10 + j in todaysGame.locks) {
       return
     }
@@ -32,11 +32,12 @@
           }
         }
         swaps.swaps[toKey].colors.push("primary")
-        swaps.count +=1
+        swaps.count += 1
       }
       activeCell[0] = 0
       activeCell[1] = 0
     }
+    return null
   }
 </script>
 

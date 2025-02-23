@@ -53,6 +53,9 @@ jamcatwow.com/games/ladders`
   }
 </script>
 
-<button class="btn btn-wide bg-gradient-to-r from-primary to-accent shadow-primary shadow-lg border-none text-primary-content" onclick={handleShare}>
+<button
+  class="btn btn-wide bg-gradient-to-r from-primary to-accent shadow-primary shadow-lg border-none text-primary-content"
+  onclick={handleShare}
+>
   Share
 </button>

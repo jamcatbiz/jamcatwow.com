@@ -4,15 +4,13 @@ import daisyui from "daisyui"
 
 export default {
   darkMode: "class",
-  content: [
-    "./src/**/*.{html,js,svelte,ts}"
-  ],
+  content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     extend: {},
   },
   plugins: [typography, daisyui],
   daisyui: {
     themes: ["dracula"],
-    darkTheme: "dracula"
+    darkTheme: "dracula",
   },
 }

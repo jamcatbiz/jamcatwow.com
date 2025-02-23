@@ -99,7 +99,9 @@
         </div>
       </div>
     {:else}
-      <div class="card bg-base-200 card-bordered shadow-lg p-4 pt-6 mx-2 lg:mx-0 lg:p-6">
+      <div
+        class="card bg-base-200 card-bordered shadow-lg p-4 pt-6 mx-2 lg:mx-0 lg:p-6"
+      >
         <form
           class="form-widget flex flex-col"
           method="POST"

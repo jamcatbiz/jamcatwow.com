@@ -8,16 +8,12 @@ export const pricingPlans = [
     price: "$0",
     priceIntervalName: "/ month",
     stripe_price_id: null,
-    features: [
-      "New games every day",
-      "Member discounts and newsletter"
-    ],
+    features: ["New games every day", "Member discounts and newsletter"],
   },
   {
     id: "subscriber",
     name: "Subscriber",
-    description:
-      "Never miss a game",
+    description: "Never miss a game",
     price: "$3",
     priceIntervalName: "/ month",
     stripe_price_id: "price_1NkdZCHMjzZ8mGZnRSjUm4yA",
@@ -30,8 +26,7 @@ export const pricingPlans = [
   {
     id: "enterprise",
     name: "Premium",
-    description:
-      "Every feature we have, always.",
+    description: "Every feature we have, always.",
     price: "$12",
     priceIntervalName: "/ month",
     stripe_price_id: "price_1Nkda2HMjzZ8mGZn4sKvbDAV",

@@ -3,7 +3,7 @@
   import { error } from "@sveltejs/kit"
   import { sortedBlogPosts, type BlogPost } from "./../posts"
   import { WebsiteName } from "../../../../config"
-    // @ts-ignore
+  // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
 
   interface Props {

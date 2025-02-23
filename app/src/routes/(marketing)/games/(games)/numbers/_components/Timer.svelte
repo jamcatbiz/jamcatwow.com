@@ -4,7 +4,7 @@
     elapsedTime,
     hasGameOverShown,
   } from "$numbers/state.svelte"
-  import ShareButton from "$numbers/_components/ShareButton.svelte";
+  import ShareButton from "$numbers/_components/ShareButton.svelte"
 
   let last_time: number = window.performance.now()
   let frame: number
@@ -18,6 +18,7 @@
     last_time = time
 
     if (!hasGameOverShown.val && elapsedTime.val >= timerDuration) {
+      // @ts-ignore
       numbers_time_over.showModal()
       hasGameOverShown.val = true
     }
@@ -33,10 +34,10 @@
       >
         Share your score,
       </span>
-       keep playing for more!
+      keep playing for more!
     </p>
     <p class="mt-2">
-      Come back tomorrow, 
+      Come back tomorrow,
       <span
         class="font-semibold underline decoration-secondary decoration-[2px] md:decoration-[2px]"
       >
@@ -56,7 +57,7 @@
     </div>
     <div class="mt-3">
       <a href="/subscriptions">
-        <button 
+        <button
           class="btn btn-wide shadow-md shadow-primary"
           aria-label="subscribe"
         >
@@ -67,9 +68,9 @@
     <div class="divider"></div>
     <div class="">
       <a href="/games/hashbang">
-        <button 
-        class="btn btn-wide btn-sm btn-neutral shadow-md"
-        aria-label="next_game"
+        <button
+          class="btn btn-wide btn-sm btn-neutral shadow-md"
+          aria-label="next_game"
         >
           Next Game
         </button>
@@ -77,9 +78,9 @@
     </div>
     <div class="mt-3">
       <a href="/scoreboard">
-        <button 
-        class="btn btn-wide btn-sm btn-neutral shadow-md"
-        aria-label="scoreboard"
+        <button
+          class="btn btn-wide btn-sm btn-neutral shadow-md"
+          aria-label="scoreboard"
         >
           Scoreboard
         </button>
@@ -87,7 +88,7 @@
     </div>
     <div class="mt-3">
       <a href="/archive">
-        <button 
+        <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
           aria-label="archive"
         >
@@ -117,4 +118,3 @@
   >
   </progress>
 </div>
-

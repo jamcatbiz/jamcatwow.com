@@ -15,7 +15,8 @@
   } from "$anagrams/state.svelte"
 
   import Key from "$anagrams/_components/Key.svelte"
-  import Toastify from "toastify-js"
+  // @ts-ignore
+  import {Toastify, type ToastifyConfigurationObject} from "toastify-js"
 
   // Define toast objects to alert on invalid user inputs
   const guessTooShortToast: ToastifyConfigurationObject = {

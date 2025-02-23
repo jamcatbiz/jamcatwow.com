@@ -5,7 +5,7 @@
   import IconEmpty from "~icons/fa6-regular/star"
   // @ts-ignore
   import IconSolved from "~icons/fa6-solid/star"
-    // @ts-ignore
+  // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
   import { todaysGame } from "$ladders/state.svelte"
 </script>
@@ -24,7 +24,11 @@
         <li>Change one letter at a time, step by step</li>
         <li>Work from the top or bottom word</li>
         <li>Use hints for help, at the cost of points</li>
-        <li>Words gained from hints will show in <span class="text-error font-semibold">red</span></li>
+        <li>
+          Words gained from hints will show in <span
+            class="text-error font-semibold">red</span
+          >
+        </li>
       </ul>
       <div class="divider"></div>
 
@@ -42,12 +46,12 @@
       </p>
       <div class="flex flex-col mt-4 items-center">
         <div class="chat chat-end w-80">
-          <div class="chat-bubble">JamCatWow Ladders #34<br>
-            {todaysGame.topWord}<br>
-            ...<br>
-            {todaysGame.bottomWord}<br>
-            200/300
-            jamcatwow.com/games/ladders
+          <div class="chat-bubble">
+            JamCatWow Ladders #34<br />
+            {todaysGame.topWord}<br />
+            ...<br />
+            {todaysGame.bottomWord}<br />
+            200/300 jamcatwow.com/games/ladders
           </div>
         </div>
         <div class="flex mt-4">

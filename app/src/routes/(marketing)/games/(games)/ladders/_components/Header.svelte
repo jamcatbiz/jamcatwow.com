@@ -15,21 +15,25 @@
   let isActiveClass: string = "border-b-4"
   let base_path: string = "/games/ladders"
   console.log(base_path)
-  let baseClass: string = $derived(($page.url.pathname === base_path) ? isActiveClass : "")
-  let howToClass: string = $derived(($page.url.pathname === `${base_path}/how_to`) ? isActiveClass : "")
-  let statisticsClass: string = $derived(($page.url.pathname === `${base_path}/statistics`) ? isActiveClass : "")
-  let extrasClass: string = $derived(($page.url.pathname === `${base_path}/extras`) ? isActiveClass : "")
-
+  let baseClass: string = $derived(
+    $page.url.pathname === base_path ? isActiveClass : "",
+  )
+  let howToClass: string = $derived(
+    $page.url.pathname === `${base_path}/how_to` ? isActiveClass : "",
+  )
+  let statisticsClass: string = $derived(
+    $page.url.pathname === `${base_path}/statistics` ? isActiveClass : "",
+  )
+  let extrasClass: string = $derived(
+    $page.url.pathname === `${base_path}/extras` ? isActiveClass : "",
+  )
 </script>
 
 <div class="flex justify-between items-center m-1">
   <div class="flex items-center">
     <div class="">
       <a href="/">
-        <button 
-          class="btn btn-ghost rounded-b-none"
-          aria-label="home"
-        >
+        <button class="btn btn-ghost rounded-b-none" aria-label="home">
           <IconJam class="text-xs text-primary" />
           <IconCat class="text-xs text-accent" />
         </button>
@@ -37,7 +41,7 @@
     </div>
     <div class="flex {baseClass}">
       <a href="/games/ladders">
-        <button 
+        <button
           class="btn btn-ghost rounded-b-none text-lg font-semibold font-serif"
           aria-label="ladders"
         >
@@ -50,7 +54,7 @@
   <div class="flex">
     <div class="flex {howToClass}">
       <a href="/games/ladders/how_to">
-        <button 
+        <button
           class="btn btn-ghost btn-square text-lg rounded-b-none"
           aria-label="ladders_how_to"
         >
@@ -61,7 +65,7 @@
 
     <div class="flex {statisticsClass}">
       <a href="/games/ladders/statistics">
-        <button 
+        <button
           class="btn btn-ghost btn-square text-lg rounded-b-none"
           aria-label="ladders_statistics"
         >

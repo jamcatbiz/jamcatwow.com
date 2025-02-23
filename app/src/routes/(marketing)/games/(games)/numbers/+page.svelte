@@ -18,7 +18,7 @@
 
   Object.assign(todaysGame, data.todaysGame)
   Object.assign(yesterdaysGame, data.yesterdaysGame)
-  
+
   for (let i = 0; i < livePlayNumbers.val.length; i++) {
     livePlayNumbers.val[i] = todaysGame.playNumbers[i]
   }

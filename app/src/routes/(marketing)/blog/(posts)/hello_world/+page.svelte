@@ -3,6 +3,7 @@
 <h3>A Story Begins</h3>
 
 <p>
-  JamCatWow is a passion project that originally grew from a desire to share playing word games with my family.
-  Along the way, it has become a creative outlet and a way to practice some of my favorite trades.
+  JamCatWow is a passion project that originally grew from a desire to share
+  playing word games with my family. Along the way, it has become a creative
+  outlet and a way to practice some of my favorite trades.
 </p>

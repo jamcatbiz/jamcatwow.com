@@ -32,14 +32,14 @@
 
       <h3 class="text-2xl font-serif font-semibold mt-4">Scoring</h3>
       <div class="flex justify-center mt-3">
-        <div class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl">
+        <div
+          class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
+        >
           <div class="flex flex-col">
             <div class="flex justify-center">
               <h2 class="">123</h2>
             </div>
-            <div
-              class="flex pb-1 justify-center text-sm text-accent"
-            >
+            <div class="flex pb-1 justify-center text-sm text-accent">
               <div class="">
                 <IconEmpty />
               </div>
@@ -47,15 +47,18 @@
           </div>
         </div>
         <div class="indicator">
-          <span class="indicator-item indicator-bottom indicator-center badge badge-accent">+45</span>
-          <div class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl">
+          <span
+            class="indicator-item indicator-bottom indicator-center badge badge-accent"
+            >+45</span
+          >
+          <div
+            class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
+          >
             <div class="flex flex-col">
               <div class="flex justify-center">
                 <h2 class="">456</h2>
               </div>
-              <div
-                class="flex pb-1 justify-center text-sm text-accent"
-              >
+              <div class="flex pb-1 justify-center text-sm text-accent">
                 <div class="">
                   <IconSolved />
                 </div>
@@ -64,15 +67,18 @@
           </div>
         </div>
         <div class="indicator">
-          <span class="indicator-item indicator-bottom indicator-center badge badge-accent">+15</span>
-          <div class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl">
+          <span
+            class="indicator-item indicator-bottom indicator-center badge badge-accent"
+            >+15</span
+          >
+          <div
+            class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
+          >
             <div class="flex flex-col">
               <div class="flex justify-center">
                 <h2 class="">789</h2>
               </div>
-              <div
-                class="flex pb-1 justify-center text-sm text-accent"
-              >
+              <div class="flex pb-1 justify-center text-sm text-accent">
                 <div class="">
                   <IconSolved />
                 </div>
@@ -99,8 +105,10 @@
       <div class="flex flex-col mt-4 items-center">
         <div class="chat chat-end w-80">
           <div class="chat-bubble">
-            JamCatWow Numbers #34 <br>
-            {todaysGame.goalNumbers[0]} {todaysGame.goalNumbers[1]} {todaysGame.goalNumbers[2]}<br>
+            JamCatWow Numbers #34 <br />
+            {todaysGame.goalNumbers[0]}
+            {todaysGame.goalNumbers[1]}
+            {todaysGame.goalNumbers[2]}<br />
             {#each todaysGame.goalNumbers as goalNumber}
               {#if goalNumber in answers && answers[goalNumber].solved}
                 . ★ .
@@ -108,8 +116,8 @@
                 . ☆ .
               {/if}
             {/each}
-            <br>
-            270 points<br>
+            <br />
+            270 points<br />
             jamcatwow.com/games/numbers
           </div>
         </div>
