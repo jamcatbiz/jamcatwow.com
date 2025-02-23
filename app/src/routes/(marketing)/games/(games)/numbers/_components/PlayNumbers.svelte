@@ -101,6 +101,8 @@
       }
     }
   }
+
+  const btnStyle = "m-1 p-1 w-16 h-16 text-lg"
 </script>
 
 <div class="flex flex-col mt-4 mb-8">
@@ -112,14 +114,14 @@
             <button
               aria-label="placeholder"
               disabled
-              class="m-0.5 w-16 h-16"
+              class="{btnStyle}"
               id="number-{i}"
             ></button>
           </div>
         {:else if i === activeNumberIndex.val}
           <div class="">
             <button
-              class="btn btn-neutral btn-disabled m-0.5 w-16 h-16 text-lg"
+              class="btn btn-neutral btn-disabled {btnStyle}"
               id="number-{i}"
               onclick={() => handleNumberClick(i)}
             >
@@ -129,7 +131,7 @@
         {:else}
           <div class="">
             <button
-              class="btn btn-neutral m-0.5 w-16 h-16 text-lg"
+              class="btn btn-neutral {btnStyle}"
               id="number-{i}"
               onclick={() => handleNumberClick(i)}
             >
@@ -148,14 +150,14 @@
             <button
               aria-label="placeholder"
               disabled
-              class="m-0.5 w-16 h-16"
+              class="{btnStyle}"
               id="number-{i}"
             ></button>
           </div>
         {:else if i === activeNumberIndex.val}
           <div class="">
             <button
-              class="btn btn-neutral btn-disabled m-0.5 w-16 h-16 text-lg"
+              class="btn btn-neutral btn-disabled {btnStyle}"
               id="number-{i}"
               onclick={() => handleNumberClick(i)}
             >
@@ -165,7 +167,7 @@
         {:else}
           <div class="">
             <button
-              class="btn btn-neutral m-0.5 w-16 h-16 text-lg"
+              class="btn btn-neutral {btnStyle}"
               id="number-{i}"
               onclick={() => handleNumberClick(i)}
             >
