@@ -9,7 +9,7 @@
   Object.assign(yesterdaysGame, data.yesterdaysGame)
 </script>
 
-<div class="flex flex justify-center">
+<div class="flex justify-center">
   <div class="flex flex-col justify-center mt-10">
     <Board />
     <div class="flex mt-6 text-center ml-3 w-80 font-light">

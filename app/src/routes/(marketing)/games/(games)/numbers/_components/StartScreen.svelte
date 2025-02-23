@@ -24,7 +24,7 @@
   }
 </script>
 
-<div class="flex flex-col items-center m-10">
+<div class="flex flex-col items-center text-center m-10">
   <p class="mt-6 text-xl">Use arithmetic to make goal numbers.</p>
   <div class="mt-12">
     <button class="btn btn-wide btn-accent" onclick={start}>Start</button>

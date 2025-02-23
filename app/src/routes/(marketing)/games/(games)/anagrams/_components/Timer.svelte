@@ -19,6 +19,7 @@
 
     if (!hasGameOverShown.val && elapsedTime.val >= timerDuration) {
       hasGameOverShown.val = true
+      // @ts-ignore
       anagrams_time_over.showModal()
     }
   })()

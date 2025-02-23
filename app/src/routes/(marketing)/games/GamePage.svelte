@@ -39,7 +39,7 @@
         href="/games/anagrams"
         class=""
       >
-        <button class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow shadow-md shadow-primary border-none px-6 mt-8">
+        <button class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none px-6 mt-8">
           Play Now
         </button>
       </a>
