@@ -8,15 +8,12 @@
   // @ts-ignore
   import IconBack from "~icons/fa6-solid/chevron-left"
   import { answers, todaysGame } from "$numbers/state.svelte"
+  import BackButton from "$numbers/_components/BackButton.svelte"
 </script>
 
 <div class="flex w-full justify-center">
   <div class="px-6 pb-10">
-    <a href="/games/numbers">
-      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
-        <IconBack /> Back to game
-      </button>
-    </a>
+    <BackButton />
     <h3 class="text-2xl font-serif font-semibold">How To Play</h3>
     <p class="mt-3">Race to calculate goal numbers using arithmetic.</p>
     <div class="instructions font-light">

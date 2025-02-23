@@ -1,22 +1,12 @@
 <script lang="ts">
-  import ShareButton from "$numbers/_components/ShareButton.svelte"
-
-  // @ts-ignore
-  import IconEmpty from "~icons/fa6-regular/star"
-  // @ts-ignore
-  import IconSolved from "~icons/fa6-solid/star"
-  // @ts-ignore
-  import IconBack from "~icons/fa6-solid/chevron-left"
+  import BackButton from "$ladders/_components/BackButton.svelte"
+  import ShareButton from "$ladders/_components/ShareButton.svelte"
   import { todaysGame } from "$ladders/state.svelte"
 </script>
 
 <div class="flex w-full justify-center">
   <div class="px-6 pb-10">
-    <a href="/games/ladders">
-      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
-        <IconBack /> Back to game
-      </button>
-    </a>
+    <BackButton />
     <h3 class="text-2xl font-serif font-semibold">How To Play</h3>
     <p class="mt-3 font-medium">Classic word ladders puzzle.</p>
     <div class="instructions font-light mt-1">

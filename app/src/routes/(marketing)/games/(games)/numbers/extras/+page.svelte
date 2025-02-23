@@ -1,19 +1,14 @@
 <script lang="ts">
-  import { todaysGame, yesterdaysGame } from "$numbers/state.svelte"
+  import { yesterdaysGame } from "$numbers/state.svelte"
   import ShareButton from "$numbers/_components/ShareButton.svelte"
-  // @ts-ignore
-  import IconBack from "~icons/fa6-solid/chevron-left"
+  import BackButton from "$numbers/_components/BackButton.svelte"
 
   const playNumbersStyle = "w-14 h-12 text-lg font-bold"
 </script>
 
 <div class="flex w-full justify-center">
   <div class="px-6 pb-10">
-    <a href="/games/numbers">
-      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
-        <IconBack /> Back to game
-      </button>
-    </a>
+    <BackButton />
     <h3 class="text-2xl font-serif font-semibold">Archive</h3>
     <div class="font-light mt-3">
       <p>Coming soon!</p>

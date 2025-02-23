@@ -1,17 +1,12 @@
 <script lang="ts">
+  import BackButton from "$anagrams/_components/BackButton.svelte"
   import Scoreboard from "$anagrams/_components/Scoreboard.svelte"
   import ShareButton from "$anagrams/_components/ShareButton.svelte"
-  // @ts-ignore
-  import IconBack from "~icons/fa6-solid/chevron-left"
 </script>
 
 <div class="flex w-full justify-center">
   <div class="px-6 pb-10">
-    <a href="/games/anagrams">
-      <button class="btn btn-ghost btn-sm opacity-50 px-2 mb-2.5">
-        <IconBack /> Back to game
-      </button>
-    </a>
+    <BackButton />
     <h3 class="text-2xl font-semibold font-serif">How To Play</h3>
     <p class="font-medium mt-2">Find words by reordering letters.</p>
     <p class="font-medium mt-1">
