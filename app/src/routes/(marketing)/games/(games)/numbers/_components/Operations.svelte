@@ -24,7 +24,7 @@
     },
   }
 
-  const operationClass = "btn btn-accent w-16 h-16"
+  const operationClass = "btn btn-accent w-16 h-16 touch-none"
 
   function handleOperationClick(str: string) {
     if (activeNumberIndex.val !== -1) {
