@@ -11,7 +11,7 @@
   <title>Reset Password</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
+<h1 class="text-2xl font-semibold font-serif">Settings</h1>
 
 <SettingsModule
   title="Reset Password"

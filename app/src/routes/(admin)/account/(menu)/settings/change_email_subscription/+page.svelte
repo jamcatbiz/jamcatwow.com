@@ -9,7 +9,7 @@
   <title>Change Email Subscription</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Email Subscription</h1>
+<h1 class="text-2xl font-semibold font-serif">Email Subscription</h1>
 
 <SettingsModule
   editable={true}

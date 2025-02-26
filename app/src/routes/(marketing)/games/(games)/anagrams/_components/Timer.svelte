@@ -29,14 +29,28 @@
   <div class="modal-box">
     <h3 class="text-xl font-bold">Time's Up!</h3>
     <p class="mt-2">
+      Share your score,
       <span
         class="font-semibold underline decoration-secondary decoration-[2px] md:decoration-[2px]"
       >
-        Share your score,
+        try the next game,
       </span>
-      keep playing for more!
+      or keep playing!
     </p>
-    <p class="mt-2">
+    <div class="mt-4">
+      <ShareButton />
+    </div>
+    <div class="mt-4">
+      <a href="/games/numbers">
+        <button
+          class="btn btn-wide btn-outline btn-primary shadow-primary shadow-md"
+          aria-label="next_game"
+        >
+          Next Game
+        </button>
+      </a>
+    </div>
+    <p class="mt-6">
       Come back tomorrow,
       <span
         class="font-semibold underline decoration-secondary decoration-[2px] md:decoration-[2px]"
@@ -44,39 +58,17 @@
         new games daily.
       </span>
     </p>
-    <p class="mt-2">
-      <span
-        class="font-semibold underline decoration-secondary decoration-[2px] md:decoration-[2px]"
-      >
-        Subscribe
-      </span>
-      for access to more games and more stats!
-    </p>
-    <div class="mt-6">
-      <ShareButton />
-    </div>
-    <div class="mt-3">
+    <div class="mt-4">
       <a href="/subscriptions">
         <button
-          class="btn btn-wide shadow-md shadow-primary"
-          aria-label="subscribe"
+          class="btn btn-wide btn-sm btn-neutral shadow-md"
+          aria-label="scoreboard"
         >
           Subscribe
         </button>
       </a>
     </div>
-    <div class="divider"></div>
-    <div class="">
-      <a href="/games/numbers">
-        <button
-          class="btn btn-wide btn-sm btn-neutral shadow-md"
-          aria-label="next_game"
-        >
-          Next Game
-        </button>
-      </a>
-    </div>
-    <div class="mt-3">
+    <div class="mt-2">
       <a href="/scoreboard">
         <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
@@ -86,7 +78,7 @@
         </button>
       </a>
     </div>
-    <div class="mt-3">
+    <div class="mt-2">
       <a href="/archive">
         <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
@@ -95,6 +87,9 @@
           Archive
         </button>
       </a>
+    </div>
+    <div class="mt-4 text-xs opacity-60">
+      <p>Thank you for playing!</p>
     </div>
   </div>
   <form method="dialog" class="modal-backdrop">

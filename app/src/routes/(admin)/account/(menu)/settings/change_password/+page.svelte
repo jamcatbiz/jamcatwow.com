@@ -47,7 +47,7 @@
   <title>Change Password</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Change Password</h1>
+<h1 class="text-2xl font-semibold font-serif">Change Password</h1>
 
 {#if hasPassword}
   <SettingsModule
@@ -80,7 +80,7 @@
   />
 {:else}
   <div
-    class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow max-w-md"
+    class="card p-6 pb-7 mt-8 flex flex-col md:flex-row shadow max-w-md"
   >
     <div class="flex flex-col gap-y-4">
       {#if usingOAuth}

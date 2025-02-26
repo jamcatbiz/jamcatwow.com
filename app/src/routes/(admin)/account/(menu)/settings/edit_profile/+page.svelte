@@ -15,7 +15,7 @@
   <title>Edit Profile</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Settings</h1>
+<h1 class="text-2xl font-serif font-semibold">Settings</h1>
 
 <SettingsModule
   editable={true}
@@ -28,18 +28,6 @@
       label: "Name",
       initialValue: profile?.full_name ?? "",
       placeholder: "Your full name",
-      maxlength: 50,
-    },
-    {
-      id: "companyName",
-      label: "Company Name",
-      initialValue: profile?.company_name ?? "",
-      maxlength: 50,
-    },
-    {
-      id: "website",
-      label: "Company Website",
-      initialValue: profile?.website ?? "",
       maxlength: 50,
     },
   ]}
