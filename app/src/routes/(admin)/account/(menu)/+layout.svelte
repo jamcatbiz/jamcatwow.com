@@ -55,7 +55,7 @@
       </div>
       <div class="flex-none">
         <div class="dropdown dropdown-end">
-          <label for="admin-drawer" class="btn btn-ghost btn-circle">
+          <label for="admin-drawer" class="btn btn-ghost btn-square">
             <IconExtras />
           </label>
         </div>
