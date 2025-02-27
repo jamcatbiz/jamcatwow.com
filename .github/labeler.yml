@@ -1,0 +1,38 @@
+docs:
+- changed-files:
+  - any-glob-to-any-file:
+    - "**/*.md"
+workflows:
+- changed-files:
+  - any-glob-to-any-file:
+    - .github/workflows/**
+app:
+- changed-files:
+  - any-glob-to-any-file:
+    - app/**
+mgmt:
+- changed-files:
+  - any-glob-to-any-file:
+    - mgmt/**
+anagrams:
+- changed-files:
+  - any-glob-to-any-file:
+    - "**/anagrams/**"
+numbers:
+- changed-files:
+  - any-glob-to-any-file:
+    - "**/numbers/**"
+hashbang:
+- changed-files:
+  - any-glob-to-any-file:
+    - "**/hashbang/**"
+ladders:
+- changed-files:
+  - any-glob-to-any-file:
+    - "**/ladders/**"
+feat:
+- head-branch: ["^feat", "feat"]
+fix:
+- head-branch: ["^fix", "fix"]
+chore:
+- head-branch: ["^chore", "chore"]

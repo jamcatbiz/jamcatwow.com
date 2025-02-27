@@ -1,0 +1,9 @@
+version: 2
+updates:
+- package-ecosystem: "npm"
+  directory: "app/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  commit-message:
+    prefix: "chore: "
