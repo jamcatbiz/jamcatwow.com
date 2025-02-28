@@ -1,19 +1,10 @@
-# jamcatwow.com
+# JamCatWow SvelteKit Web App
 
-## Tech Stack
+This dir contains the web app that users interact with to play games, share, create accounts, checkout, etc.
 
-- Web Framework: SvelteKit
-- CSS / Styling
-  - Framework: TailwindCSS
-  - Component library: DaisyUI
-- Hosting Stack
-  - Host + CDN: Cloudflare Pages
-  - Serverless compute: Cloudflare Workers
-  - Authentication: Supabase Auth
-  - Database: Supabase Postgres
-- Payments
-  - Stripe Checkout
-  - Stripe Portal
+For the high level overview of the tech stack see the root README.
+
+There is a lot of information baked into the run commands included in the dir's `package.json`.
 
 ## Performance / Best Practices
 
@@ -30,10 +21,9 @@ The selected tech stack creates lightning fast websites.
 
 ## Setup Local Development
 
-On your development machine:
+On your development machine, in this working dir:
 
 ```
-git pull [Your Repo Created Above]
 npm install
 ## Create an env file. You'll replace the values in this in later steps.
 ## Run the project locally in dev mode, and launch the browser
