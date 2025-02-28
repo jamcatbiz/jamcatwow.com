@@ -2,14 +2,18 @@
   import {
     bottomGuesses,
     guessesAdded,
+    hasWon,
     hintsUsed,
+    points,
     todaysGame,
     topGuesses,
   } from "$ladders/state.svelte"
 
   function handleReset() {
-    topGuesses.val.length = (hintsUsed.val % 2) + Math.floor(hintsUsed.val / 2)
-    bottomGuesses.val.length = Math.floor(hintsUsed.val / 2)
+    if (!hasWon) {
+      topGuesses.val.length = (hintsUsed.val % 2) + Math.floor(hintsUsed.val / 2)
+      bottomGuesses.val.splice(0, bottomGuesses.val.length - Math.floor(hintsUsed.val / 2))
+    }
   }
 
   function handleHint() {
@@ -32,8 +36,9 @@
         ]
       }
       hintsUsed.val = hintsUsed.val + 1
+      points.val -= 50
     } else {
-      const element = document.getElementById("helpButton")
+      const element = document.getElementById("hintButton")
       if (
         element &&
         !element.classList.replace("doesShake1", "doesShake2") &&
@@ -53,13 +58,18 @@
   </div>
   <div class="flex">
     <div class="flex">
-      <button
-        class="btn btn-error btn-outline min-w-20"
-        id="hintButton"
-        onclick={handleHint}
-      >
-        Hint
-      </button>
+      <div class="indicator">
+        {#if hintsUsed.val > 0}
+          <span class="indicator-item badge badge-sm badge-error">{hintsUsed.val}</span>
+        {/if}
+        <button
+          class="btn btn-error btn-outline min-w-20"
+          id="hintButton"
+          onclick={handleHint}
+        >
+          Hint
+        </button>
+      </div>
     </div>
   </div>
 </div>

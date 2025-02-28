@@ -65,3 +65,4 @@ export const guessesAdded = $state({ val: defaultGuesses })
 export const hasWon = $state({ val: false })
 export const goalDistance = 1
 export const hintsUsed = $state({ val: 0 })
+export const points = $state({ val: 300 })
