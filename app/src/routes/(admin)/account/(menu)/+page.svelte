@@ -14,14 +14,12 @@
   <title>Account</title>
 </svelte:head>
 
-<h1 class="text-2xl font-semibold font-serif">Hello {profile?.full_name ?? ""}!</h1>
+<h1 class="text-2xl font-semibold font-serif">
+  Hello {profile?.full_name ?? ""}!
+</h1>
 <div class="mt-4">
-  <p>  
-    This page is a hub for your account information and management.
-  </p>
-  <p class="mt-1">
-    Check out the navigation top-right for more options.
-  </p>
+  <p>This page is a hub for your account information and management.</p>
+  <p class="mt-1">Check out the navigation top-right for more options.</p>
 </div>
 
 <div class="divider"></div>

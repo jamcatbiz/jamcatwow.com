@@ -68,9 +68,7 @@
 
   <div class="drawer-side">
     <label for="admin-drawer" class="drawer-overlay"></label>
-    <ul
-      class="menu menu-lg p-4 w-80 min-h-full bg-base-100 lg:border-r"
-    >
+    <ul class="menu menu-lg p-4 w-80 min-h-full bg-base-100 lg:border-r">
       <li>
         <div
           class="normal-case menu-title text-xl font-bold text-primary flex flex-row"
@@ -82,7 +80,10 @@
               <div class="text-base-content">{WebsiteName}</div>
             </div>
           </a>
-          <label for="admin-drawer" class="lg:hidden ml-3 text-base-content opacity-70">
+          <label
+            for="admin-drawer"
+            class="lg:hidden ml-3 text-base-content opacity-70"
+          >
             <IconBack />
           </label>
         </div>
@@ -93,7 +94,7 @@
           class={adminSection === "home" ? "active" : ""}
           onclick={closeDrawer}
         >
-          <IconHome class="mr-2"/>
+          <IconHome class="mr-2" />
           Home
         </a>
       </li>
@@ -103,7 +104,7 @@
           class={adminSection === "billing" ? "active" : ""}
           onclick={closeDrawer}
         >
-          <IconBilling class="mr-2 w-6 h-6"/>
+          <IconBilling class="mr-2 w-6 h-6" />
           Billing
         </a>
       </li>
@@ -113,14 +114,14 @@
           class={adminSection === "settings" ? "active" : ""}
           onclick={closeDrawer}
         >
-          <IconSettings class="mr-2"/>
+          <IconSettings class="mr-2" />
           Settings
         </a>
       </li>
 
       <li class="mt-auto">
         <a href="/account/sign_out" class="mt-auto text-base">
-          <IconSignOut class="mr-2"/>
+          <IconSignOut class="mr-2" />
           Sign Out
         </a>
       </li>

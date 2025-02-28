@@ -87,9 +87,7 @@
           <p>Thank you for playing!</p>
         </div>
       {:else}
-        <p class="text-lg font-medium">
-          Swap one letter at a time.
-        </p>
+        <p class="text-lg font-medium">Swap one letter at a time.</p>
         <div class="basis-28 mt-4">
           <Keyboard />
         </div>

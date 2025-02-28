@@ -10,7 +10,7 @@
   import IconSearch from "~icons/fa6-solid/magnifying-glass"
   // @ts-ignore
   import IconExtras from "~icons/fa6-solid/bars"
-  
+
   interface Props {
     children?: import("svelte").Snippet
   }
@@ -32,11 +32,14 @@
         <a href="/subscriptions" class="btn btn-neutral">Subscribe</a>
       </li>
       <li class="md:mx-2">
-        <a href="/games" aria-label="Games" class="btn btn-ghost">Games</a></li>
+        <a href="/games" aria-label="Games" class="btn btn-ghost">Games</a>
+      </li>
       <li class="md:mx-2">
-        <a href="/blog" aria-label="Blog" class="btn btn-ghost">Blog</a></li>
+        <a href="/blog" aria-label="Blog" class="btn btn-ghost">Blog</a>
+      </li>
       <li class="md:mx-2">
-        <a href="/account"  aria-label="Account" class="btn btn-ghost">Account</a>
+        <a href="/account" aria-label="Account" class="btn btn-ghost">Account</a
+        >
       </li>
       <li class="md:mx-0">
         <a href="/search" aria-label="Search" class="btn btn-ghost btn-square">
@@ -55,12 +58,26 @@
         tabindex="0"
         class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
       >
-        <li><a href="/games" aria-label="Games" class="btn btn-ghost">Games</a></li>
-        <li><a href="/blog" aria-label="Blog" class="btn btn-ghost">Blog</a></li>
-        <li><a href="/account" aria-label="Account" class="btn btn-ghost">Account</a></li>
-        <li><a href="/search" aria-label="Search" class="btn btn-ghost">Search</a></li>
         <li>
-          <a href="/subscriptions" aria-label="Subscriptions" class="btn btn-neutral">Subscribe</a>
+          <a href="/games" aria-label="Games" class="btn btn-ghost">Games</a>
+        </li>
+        <li>
+          <a href="/blog" aria-label="Blog" class="btn btn-ghost">Blog</a>
+        </li>
+        <li>
+          <a href="/account" aria-label="Account" class="btn btn-ghost"
+            >Account</a
+          >
+        </li>
+        <li>
+          <a href="/search" aria-label="Search" class="btn btn-ghost">Search</a>
+        </li>
+        <li>
+          <a
+            href="/subscriptions"
+            aria-label="Subscriptions"
+            class="btn btn-neutral">Subscribe</a
+          >
         </li>
       </ul>
     </div>

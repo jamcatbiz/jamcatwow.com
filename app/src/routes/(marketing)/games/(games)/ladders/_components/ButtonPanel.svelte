@@ -11,8 +11,12 @@
 
   function handleReset() {
     if (!hasWon) {
-      topGuesses.val.length = (hintsUsed.val % 2) + Math.floor(hintsUsed.val / 2)
-      bottomGuesses.val.splice(0, bottomGuesses.val.length - Math.floor(hintsUsed.val / 2))
+      topGuesses.val.length =
+        (hintsUsed.val % 2) + Math.floor(hintsUsed.val / 2)
+      bottomGuesses.val.splice(
+        0,
+        bottomGuesses.val.length - Math.floor(hintsUsed.val / 2),
+      )
     }
   }
 
@@ -60,7 +64,9 @@
     <div class="flex">
       <div class="indicator">
         {#if hintsUsed.val > 0}
-          <span class="indicator-item badge badge-sm badge-error">{hintsUsed.val}</span>
+          <span class="indicator-item badge badge-sm badge-error"
+            >{hintsUsed.val}</span
+          >
         {/if}
         <button
           class="btn btn-error btn-outline min-w-20"
