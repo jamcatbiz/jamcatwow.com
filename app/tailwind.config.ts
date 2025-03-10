@@ -8,9 +8,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [typography, daisyui],
-  daisyui: {
-    themes: ["dracula"],
-    darkTheme: "dracula",
-  },
+  plugins: [typography],
 }
