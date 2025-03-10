@@ -16,28 +16,28 @@
 
   import Key from "$anagrams/_components/Key.svelte"
   // @ts-ignore
-  import { Toastify, type ToastifyConfigurationObject } from "toastify-js"
+  import Toastify from "toastify-js"
 
   // Define toast objects to alert on invalid user inputs
-  const guessTooShortToast: ToastifyConfigurationObject = {
+  const guessTooShortToast = {
     text: "Guess must be 4+ letters.",
     duration: 2000,
     className: "alert alert-warning absolute max-w-80 m-auto left-0 right-0",
   }
 
-  const guessWordOfDayToast: ToastifyConfigurationObject = {
+  const guessWordOfDayToast = {
     text: "How clever... try again!",
     duration: 2000,
     className: "alert alert-warning absolute max-w-80 m-auto left-0 right-0",
   }
 
-  const guessDuplicateToast: ToastifyConfigurationObject = {
+  const guessDuplicateToast = {
     text: "You've already guessed that.",
     duration: 2000,
     className: "alert alert-warning absolute max-w-80 m-auto left-0 right-0",
   }
 
-  const guessIncorrectToast: ToastifyConfigurationObject = {
+  const guessIncorrectToast = {
     text: "Not an answer today.",
     duration: 2000,
     className: "alert alert-warning absolute max-w-80 m-auto left-0 right-0",
