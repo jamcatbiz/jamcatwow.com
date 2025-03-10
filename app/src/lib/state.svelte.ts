@@ -32,8 +32,7 @@ export const contents = {
     },
     {
       name: "Hashbang",
-      description:
-        "Swap letters to find a valid hashtag crossword. Fewer swaps the better.",
+      description: "Swap letters to find a valid hashtag crossword.",
       link: "/games/hashbang",
       linkText: "Play",
       newPage: false,
