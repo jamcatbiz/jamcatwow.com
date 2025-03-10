@@ -22,12 +22,14 @@
       } else {
         if (!(toKey in swaps.swaps)) {
           swaps.swaps[toKey] = {
+            origins: [fromKey],
             colors: [],
           }
         }
         swaps.swaps[toKey].colors.push("primary")
         if (!(fromKey in swaps.swaps)) {
           swaps.swaps[fromKey] = {
+            origins: [toKey],
             colors: [],
           }
         }

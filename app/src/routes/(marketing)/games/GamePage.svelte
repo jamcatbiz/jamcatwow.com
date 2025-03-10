@@ -3,7 +3,7 @@
 </script>
 
 <div class="min-h-[60vh]">
-  <div class="pt-16 pb-8 px-7">
+  <div class="pt-10 pb-8 px-7">
     <div class="max-w-lg mx-auto text-center">
       <div
         class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent pb-2"
@@ -50,9 +50,9 @@
       {#each contents.games as game}
         <a href={game.link} class="" target={game.newPage ? "_blank" : ""}>
           <div
-            class="card bg-base-300 w-[200px] min-h-[230px] flex-none shadow-md"
+            class="card bg-base-300 w-[300px] min-h-[180px] flex-none shadow-md"
           >
-            <div class="card-body items-center text-center p-[20px] pt-[24px]">
+            <div class="card-body items-center text-center p-[18px] pt-[15px]">
               <h2 class="card-title text-{game.color}">
                 {game.name}
               </h2>

@@ -11,6 +11,10 @@ import { getDate } from "$lib/get_date.svelte"
 // TODO: Change this back
 const d = getDate(0)
 const yd = getDate(-1)
+const defaultSwaps: Swaps = {
+  count: 0,
+  swaps: {},
+}
 const defaultGame: Game = {
   gameWords: [],
   startBoard: [
@@ -27,10 +31,7 @@ const defaultGame: Game = {
   ],
   date: "",
   solvedBoard: [],
-}
-const defaultSwaps: Swaps = {
-  count: 0,
-  swaps: {},
+  solvedSwaps: defaultSwaps,
 }
 
 export const todaysDateIso = d.iso
@@ -42,18 +43,6 @@ export const swaps = $state(JSON.parse(JSON.stringify(defaultSwaps)))
 export const todaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const yesterdaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const activeCell = $state([0, 0])
-export const timerDuration = $state(1000 * 60 * 0.2)
-export const currentGuess: Array<string> = $state([])
-export const hasResumed = new LocalStorage(
-  "jamcat_hashbang_hasResumed",
-  false,
-  true,
-  (str: string) => {
-    return str === "true"
-  },
-)
-export const keyData: KeyData = $state({})
-export const guessesSort: GuessesSort = $state({})
 export const lastPlayedDate = new LocalStorage(
   "jamcat_hashbang_lastPlayedDate",
   "YYYY-MM-DD",
@@ -68,56 +57,16 @@ export const hasPlayedToday = $state(
 export const isFirstVisit = $state(
   lastPlayedDate.val === "YYYY-MM-DD" ? true : false,
 )
-export const elapsedTime = new LocalStorage(
-  "jamcat_hashbang_elapsedTime",
-  0,
-  false,
-  (str: string) => {
-    return Number(str)
-  },
-)
-export const progress = new LocalStorage(
-  "jamcat_hashbang_progress",
-  0,
-  false,
-  (str: string) => {
-    return Number(str)
-  },
-)
-export const timedProgress = new LocalStorage(
-  "jamcat_hashbang_timedProgress",
-  0,
-  false,
-  (str: string) => {
-    return Number(str)
-  },
-)
 export const points = new LocalStorage(
   "jamcat_hashbang_points",
-  0,
+  400,
   false,
   (str: string) => {
     return Number(str)
   },
 )
-export const timedPoints = new LocalStorage(
-  "jamcat_hashbang_timedPoints",
-  0,
-  false,
-  (str: string) => {
-    return Number(str)
-  },
-)
-export const guesses: LocalStorage<Guesses> = new LocalStorage(
-  "jamcat_hashbang_guesses",
-  {},
-  false,
-  (str: string) => {
-    return JSON.parse(str)
-  },
-)
-export const hasGameOverShown = new LocalStorage(
-  "jamcat_hashbang_hasGameOverShown",
+export const hasWon = new LocalStorage(
+  "jamcat_hashbang_hasWon",
   false,
   false,
   (str: string) => {
@@ -126,14 +75,6 @@ export const hasGameOverShown = new LocalStorage(
 )
 export const statGamesPlayed = new LocalStorage(
   "jamcat_hashbang_statGamesPlayed",
-  0,
-  false,
-  (str: string) => {
-    return Number(str)
-  },
-)
-export const statWordsFound = new LocalStorage(
-  "jamcat_hashbang_statWordsFound",
   0,
   false,
   (str: string) => {

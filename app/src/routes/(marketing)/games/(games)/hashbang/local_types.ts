@@ -3,10 +3,13 @@ import type { LocalStorage } from "$lib/storage.svelte"
 export type Board = Array<Array<string>>
 
 export type Swaps = {
-  count: number
-  swaps: {
+  order: Array<{
+    i: number
+    j: number
+  }>
+  cellInfo: {
     [key: number]: {
-      colors: Array<string>
+      [key: number]: string
     }
   }
 }
@@ -14,9 +17,11 @@ export type Swaps = {
 export type Game = {
   startBoard: Board
   solvedBoard: Board
+  solvedSwaps: Swaps
   gameWords: Array<string>
   locks: Array<Array<number>>
   date: string
+  gameNumber: number
 }
 
 export type KeyData = {
@@ -25,14 +30,6 @@ export type KeyData = {
     guessCount: number
     isAvailable: boolean
   }
-}
-
-export type Guesses = {
-  [key: string]: boolean
-}
-
-export type GuessesSort = {
-  [key: string]: Guesses
 }
 
 export type PageLoadData = {
@@ -46,21 +43,11 @@ export type GameData = {
   todaysDateLocale: string
   todaysGame: Game
   yesterdaysGame: Game
-  timerDuration: number
-  currentGuess: Array<string>
-  hasResumed: LocalStorage<boolean>
   keyData: KeyData
-  guessesSort: GuessesSort
   hasPlayedToday: boolean
   isFirstVisit: boolean
   lastPlayedDate: LocalStorage<string>
-  elapsedTime: LocalStorage<number>
-  progress: LocalStorage<number>
-  timedProgress: LocalStorage<number>
   points: LocalStorage<number>
-  timedPoints: LocalStorage<number>
-  guesses: LocalStorage<GuessesSort>
-  hasGameOverShown: LocalStorage<boolean>
+  hasWon: LocalStorage<boolean>
   statGamesPlayed: LocalStorage<number>
-  statWordsFound: LocalStorage<number>
 }

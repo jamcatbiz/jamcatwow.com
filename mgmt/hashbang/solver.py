@@ -35,11 +35,6 @@ def get_words(local_path='', s3_bucket='', s3_path=''):
       words = list(json.load(infile).keys())
   return words
 
-def solve_game(begin_word: str, end_word: str, words: List[str]):
-  # Helper function to perform depth-first search to find path
-  
-  return ans  # Return the list of all shortest transformation sequences
-
 if __name__ == "__main__":
   parser = argparse.ArgumentParser()
   parser.add_argument("str1")
@@ -49,5 +44,3 @@ if __name__ == "__main__":
   words_bucket = 'jamcatwow.com.games'
   words_path = 'ladders/data/all_words.json'
   words = get_words(s3_bucket=words_bucket, s3_path=words_path)
-  
-  pprint(solve_game(args.str1, args.str2, words))
