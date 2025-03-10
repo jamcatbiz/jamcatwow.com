@@ -73,7 +73,7 @@
   >
     <div class="px-6">
       <h1 class="text-2xl lg:text-4xl font-bold mb-4">Contact Us</h1>
-      <p class="text-lg">Fill out this form:</p>
+      <p class="text-lg">Fill out this form if...</p>
       <ul class="list-disc list-outside pl-6 py-4 space-y-1">
         <li class="">you have any questions or need help.</li>
         <li class="">you have any suggestions for our site.</li>
