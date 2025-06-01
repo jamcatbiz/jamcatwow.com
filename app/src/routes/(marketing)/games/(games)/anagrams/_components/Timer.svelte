@@ -37,11 +37,11 @@
       </span>
       or keep playing!
     </p>
-    <div class="mt-4">
+    <div class="flex w-full justify-center mt-2">
       <ShareButton />
     </div>
-    <div class="mt-4">
-      <a href="/games/numbers">
+    <div class="flex w-full mt-4">
+      <a href="/games/numbers" class="flex w-full justify-center">
         <button
           class="btn btn-wide btn-outline btn-primary shadow-primary shadow-md"
           aria-label="next_game"
@@ -58,8 +58,8 @@
         new games daily.
       </span>
     </p>
-    <div class="mt-4">
-      <a href="/subscriptions">
+    <div class="flex w-full mt-2">
+      <a href="/subscriptions" class="flex w-full justify-center">
         <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
           aria-label="scoreboard"
@@ -68,8 +68,8 @@
         </button>
       </a>
     </div>
-    <div class="mt-2">
-      <a href="/scoreboard">
+    <div class="flex w-full mt-2">
+s      <a href="/scoreboard" class="flex w-full justify-center">
         <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
           aria-label="scoreboard"
@@ -78,8 +78,8 @@
         </button>
       </a>
     </div>
-    <div class="mt-2">
-      <a href="/archive">
+    <div class="flex w-full mt-2">
+      <a href="/archive" class="flex w-full justify-center">
         <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
           aria-label="archive"

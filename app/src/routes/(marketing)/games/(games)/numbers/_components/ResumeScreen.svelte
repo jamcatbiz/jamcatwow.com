@@ -14,10 +14,10 @@
 
 <div class="flex flex-col items-center text-center m-10">
   <p class="mt-6 text-xl">Keep playing today's game?</p>
-  <div class="mt-12">
+  <div class="flex justify-center w-full mt-12">
     <button class="btn btn-wide btn-accent" onclick={resume}>Continue</button>
   </div>
-  <div class="mt-4">
+  <div class="flex justify-center w-full mt-4">
     <button class="btn btn-wide shadow-md shadow-accent">Subscribe</button>
   </div>
 

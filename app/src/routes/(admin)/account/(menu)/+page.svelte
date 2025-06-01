@@ -26,7 +26,7 @@
 <h1 class="text-2xl font-semibold font-serif">Your Stats</h1>
 <div class="my-6">
   <h1 class="text-xl font-bold mb-1">Games Played</h1>
-  <div class="stats shadow stats-vertical sm:stats-horizontal sm:w-[420px]">
+  <div class="stats shadow-sm stats-vertical sm:stats-horizontal sm:w-[420px]">
     <div class="stat place-items-center">
       <div class="stat-title">Downloads</div>
       <div class="stat-value">31K</div>
@@ -42,7 +42,7 @@
 </div>
 <div class="my-6">
   <h1 class="text-xl font-bold mb-1">Points Scored</h1>
-  <div class="stats shadow stats-vertical sm:stats-horizontal sm:w-[420px]">
+  <div class="stats shadow-sm stats-vertical sm:stats-horizontal sm:w-[420px]">
     <div class="stat place-items-center">
       <div class="stat-title">New Registers</div>
       <div class="stat-value">1,200</div>
@@ -58,7 +58,7 @@
 </div>
 <div class="my-6">
   <h1 class="text-xl font-bold mb-1">Scores Shared</h1>
-  <div class="stats shadow stats-vertical sm:stats-horizontal sm:w-[420px]">
+  <div class="stats shadow-sm stats-vertical sm:stats-horizontal sm:w-[420px]">
     <div class="stat place-items-center">
       <div class="stat-title text-success">Revenue</div>
       <div class="stat-value text-success">$4200</div>

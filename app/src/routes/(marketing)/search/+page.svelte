@@ -96,12 +96,12 @@
     class="text-3xl lg:text-5xl font-medium text-primary flex gap-3 items-baseline text-center place-content-center"
   >
     <div
-      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent"
+      class="text-center leading-relaxed font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent"
     >
       Search
     </div>
   </div>
-  <label class="input input-bordered flex items-center gap-2 mt-10">
+  <label class="input flex items-center gap-2 mt-10">
     <input
       id="search-input"
       type="text"

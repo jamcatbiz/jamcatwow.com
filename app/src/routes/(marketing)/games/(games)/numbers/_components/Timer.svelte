@@ -52,11 +52,11 @@
       </span>
       for access to more games and more stats!
     </p>
-    <div class="mt-6">
+    <div class="flex w-full justify-center mt-6">
       <ShareButton />
     </div>
-    <div class="mt-3">
-      <a href="/subscriptions">
+    <div class="flex w-full mt-3">
+      <a href="/subscriptions" class="flex w-full justify-center">
         <button
           class="btn btn-wide shadow-md shadow-primary"
           aria-label="subscribe"
@@ -66,8 +66,8 @@
       </a>
     </div>
     <div class="divider"></div>
-    <div class="">
-      <a href="/games/hashbang">
+    <div class="flex w-full">
+      <a href="/games/hashbang" class="flex w-full justify-center">
         <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
           aria-label="next_game"
@@ -76,8 +76,8 @@
         </button>
       </a>
     </div>
-    <div class="mt-3">
-      <a href="/scoreboard">
+    <div class="flex w-full mt-3">
+      <a href="/scoreboard" class="flex w-full justify-center">
         <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
           aria-label="scoreboard"
@@ -86,8 +86,8 @@
         </button>
       </a>
     </div>
-    <div class="mt-3">
-      <a href="/archive">
+    <div class="flex w-full mt-3">
+      <a href="/archive" class="flex w-full justify-center">
         <button
           class="btn btn-wide btn-sm btn-neutral shadow-md"
           aria-label="archive"

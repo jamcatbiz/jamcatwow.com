@@ -8,7 +8,7 @@
 </script>
 
 <button
-  class="btn btn-neutral h-14 rounded-sm mx-0.5 touch-manipulation {keyClass}"
+  class="btn btn-neutral h-14 rounded-xs mx-0.5 touch-manipulation {keyClass}"
   class:btn-disabled={isSelected}
   on:click={() => keyPress(key.toUpperCase())}
 >

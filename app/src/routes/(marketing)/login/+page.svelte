@@ -6,7 +6,7 @@
   <h1 class="text-xl font-bold">Get Started</h1>
   <a href="/login/sign_up"
     ><button
-      class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none mt-2"
+      class="btn btn-wide bg-linear-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none mt-2"
       >Sign Up</button
     ></a
   >

@@ -26,10 +26,10 @@
 
 <div class="flex flex-col items-center text-center m-10">
   <p class="mt-6 text-xl">Use arithmetic to make goal numbers.</p>
-  <div class="mt-12">
+  <div class="flex justify-center w-full mt-12">
     <button class="btn btn-wide btn-accent" onclick={start}>Start</button>
   </div>
-  <div class="mt-4">
+  <div class="flex justify-center w-full mt-4">
     <button class="btn btn-wide shadow-md shadow-accent">How To</button>
   </div>
 

@@ -28,7 +28,7 @@
   <div class="hero-content text-center py-12">
     <div class="max-w-xl">
       <div
-        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent mb-3 md:mb-7 pb-1"
+        class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent mb-3 md:mb-7 pb-1"
       >
         Play. Share. Wow.
       </div>
@@ -46,13 +46,13 @@
       <div class="mt-6 md:mt-2">
         <a href="/games/anagrams">
           <button
-            class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none px-6"
+            class="btn btn-wide bg-linear-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none px-6"
           >
             Play Now
           </button>
         </a>
         <a href="/subscriptions">
-          <button class="btn btn-wide shadow-md shadow-primary px-6 mt-3 mx-2"
+          <button class="btn btn-wide shadow-md shadow-primary px-6 mt-3 min-[25rem]:mt-0 mx-2"
             >Subscribe</button
           >
         </a>

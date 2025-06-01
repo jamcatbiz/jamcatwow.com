@@ -39,7 +39,7 @@
             jamcatwow.com/games/hashbang
           </div>
         </div>
-        <div class="flex mt-4">
+        <div class="flex justify-center w-full mt-4">
           <ShareButton />
         </div>
       </div>

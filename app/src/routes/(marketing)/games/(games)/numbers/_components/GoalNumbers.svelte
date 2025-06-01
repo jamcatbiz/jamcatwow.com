@@ -28,7 +28,7 @@
           </span>
         {/if}
         <div
-          class="card bg-base-300 w-20 h-20 m-1 mt-2 p-2.5 font-bold text-3xl"
+          class="card bg-base-200 w-20 h-20 m-1 mt-2 p-2.5 font-bold text-3xl"
         >
           <div class="flex flex-col">
             <div class="flex justify-center">

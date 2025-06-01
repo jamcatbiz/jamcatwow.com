@@ -8,6 +8,7 @@ export const contents = {
       linkText: "Play",
       newPage: false,
       labels: ["word", "timed"],
+      alerts: [],
       color: "primary",
     },
     {
@@ -18,6 +19,7 @@ export const contents = {
       linkText: "Play",
       newPage: false,
       labels: ["word"],
+      alerts: ["NEW"],
       color: "error",
     },
     {
@@ -28,6 +30,7 @@ export const contents = {
       linkText: "Play",
       newPage: false,
       labels: ["number", "timed"],
+      alerts: [],
       color: "accent",
     },
     {
@@ -37,6 +40,7 @@ export const contents = {
       linkText: "Play",
       newPage: false,
       labels: ["word"],
+      alerts: ["BETA"],
       color: "info",
     },
   ],

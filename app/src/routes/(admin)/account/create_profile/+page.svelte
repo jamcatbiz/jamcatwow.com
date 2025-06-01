@@ -69,7 +69,7 @@
             placeholder="Your full name"
             class="{fieldError(form, 'fullName')
               ? 'input-error'
-              : ''} mt-1 input input-bordered w-full max-w-xs"
+              : ''} mt-1 input"
             value={form?.fullName ?? fullName}
             maxlength="50"
           />
@@ -86,7 +86,7 @@
             placeholder="Company name"
             class="{fieldError(form, 'companyName')
               ? 'input-error'
-              : ''} mt-1 input input-bordered w-full max-w-xs"
+              : ''} mt-1 input"
             value={form?.companyName ?? companyName}
             maxlength="50"
           />
@@ -103,7 +103,7 @@
             placeholder="Company website"
             class="{fieldError(form, 'website')
               ? 'input-error'
-              : ''} mt-1 input input-bordered w-full max-w-xs"
+              : ''} mt-1 input"
             value={form?.website ?? website}
             maxlength="50"
           />

@@ -30,7 +30,7 @@
       <h3 class="text-2xl font-serif font-semibold mt-4">Scoring</h3>
       <div class="flex justify-center mt-3">
         <div
-          class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
+          class="flex card bg-base-200 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
         >
           <div class="flex flex-col">
             <div class="flex justify-center">
@@ -49,7 +49,7 @@
             >+45</span
           >
           <div
-            class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
+            class="flex card bg-base-200 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
           >
             <div class="flex flex-col">
               <div class="flex justify-center">
@@ -69,7 +69,7 @@
             >+15</span
           >
           <div
-            class="flex card bg-base-300 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
+            class="flex card bg-base-200 w-20 h-20 p-2.5 m-1 font-bold text-3xl"
           >
             <div class="flex flex-col">
               <div class="flex justify-center">
@@ -118,7 +118,7 @@
             jamcatwow.com/games/numbers
           </div>
         </div>
-        <div class="flex mt-4">
+        <div class="flex mt-4 justify-center w-full">
           <ShareButton />
         </div>
       </div>

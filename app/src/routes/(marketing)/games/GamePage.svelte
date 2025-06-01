@@ -6,7 +6,7 @@
   <div class="pt-10 pb-8 px-7">
     <div class="max-w-lg mx-auto text-center">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent pb-2"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2"
       >
         Games Everyday
       </div>
@@ -37,9 +37,9 @@
       </div>
       <a href="/games/anagrams" class="">
         <button
-          class="btn btn-wide bg-gradient-to-r from-primary to-accent text-primary-content shadow-md shadow-primary border-none px-6 mt-8"
+          class="btn btn-wide shadow-md shadow-primary px-6 mt-6"
         >
-          Play Now
+          Random
         </button>
       </a>
     </div>
@@ -50,18 +50,25 @@
       {#each contents.games as game}
         <a href={game.link} class="" target={game.newPage ? "_blank" : ""}>
           <div
-            class="card bg-base-300 w-[300px] min-h-[180px] flex-none shadow-md"
+            class="card bg-base-200 w-[300px] min-h-[180px] flex-none shadow-sm"
           >
-            <div class="card-body items-center text-center p-[18px] pt-[15px]">
-              <h2 class="card-title text-{game.color}">
+            <figure>
+            </figure>
+            <div class="card-body text-center p-[18px] pt-[15px]">
+              <h2 class="card-title">
                 {game.name}
+                {#each game.alerts as alert}
+                  <div class="badge badge-accent">{alert}</div>
+                {/each}
               </h2>
               <p class="text-sm opacity-80">
                 {game.description}
               </p>
-              <button class="btn btn-block btn-sm btn-neutral min-w-[100px]">
-                {game.linkText ? game.linkText : "Play"}
-              </button>
+              <div class="card-actions justify-end">
+                {#each game.labels as label}
+                  <div class="badge badge-outline">{label}</div>
+                {/each}
+              </div>
             </div>
           </div>
         </a>
@@ -71,7 +78,7 @@
   <div class="flex justify-center">
     <div class="max-w-lg mx-auto mt-8 text-center">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent pb-2"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2"
       >
         The Archives
       </div>
@@ -81,7 +88,7 @@
   <div class="flex justify-center mb-10">
     <div class="max-w-lg mx-auto mt-8 text-center">
       <div
-        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent pb-2"
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2"
       >
         The Scoreboard
       </div>

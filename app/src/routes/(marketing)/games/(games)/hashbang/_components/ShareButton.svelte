@@ -54,7 +54,7 @@ jamcatwow.com/games/hashbang`
 </script>
 
 <button
-  class="btn btn-wide bg-gradient-to-r border-none from-primary to-accent shadow-primary shadow-md text-primary-content"
+  class="btn btn-wide bg-linear-to-r border-none from-primary to-accent shadow-primary shadow-md text-primary-content"
   onclick={handleShare}
 >
   <span><IconShare /></span><span>Share</span>

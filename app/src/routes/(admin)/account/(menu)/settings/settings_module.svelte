@@ -63,7 +63,7 @@
   }
 </script>
 
-<div class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow">
+<div class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow-sm">
   {#if title}
     <div class="text-xl font-bold mb-3 w-48 md:pr-8 flex-none">{title}</div>
   {/if}
@@ -111,7 +111,7 @@
               placeholder={field.placeholder ?? field.label ?? ""}
               class="{fieldError($page?.form, field.id)
                 ? 'input-error'
-                : ''} input-sm mt-1 input input-bordered w-full max-w-xs mb-3 text-base py-4"
+                : ''} input-sm mt-1 input mb-3 text-base py-4"
               value={$page.form ? $page.form[field.id] : field.initialValue}
               maxlength={field.maxlength ? field.maxlength : null}
             />

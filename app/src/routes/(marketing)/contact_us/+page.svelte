@@ -87,12 +87,12 @@
   </div>
 
   <div
-    class="flex flex-col flex-grow m-4 lg:ml-10 min-w-[300px] stdphone:min-w-[360px] max-w-[400px] place-content-center lg:min-h-[70vh]"
+    class="flex flex-col grow m-4 lg:ml-10 min-w-[300px] stdphone:min-w-[360px] max-w-[400px] place-content-center lg:min-h-[70vh]"
   >
     {#if showSuccess}
       <div class="flex flex-col place-content-center lg:min-h-[70vh]">
         <div
-          class="card bg-base-200 card-bordered shadow-lg py-6 px-6 mx-2 lg:mx-0 lg:p-6 mb-10"
+          class="card bg-base-200 card-border shadow-lg py-6 px-6 mx-2 lg:mx-0 lg:p-6 mb-10"
         >
           <div class="text-2xl font-bold mb-4">Thank you!</div>
           <p class="">We've received your message and will be in touch soon.</p>
@@ -100,7 +100,7 @@
       </div>
     {:else}
       <div
-        class="card bg-base-200 card-bordered shadow-lg p-4 pt-6 mx-2 lg:mx-0 lg:p-6"
+        class="card bg-base-200 card-border shadow-lg p-4 pt-6 mx-2 lg:mx-0 lg:p-6"
       >
         <form
           class="form-widget flex flex-col"
@@ -113,7 +113,7 @@
               <div class="flex flex-row">
                 <div class="text-base font-bold">{field.label}</div>
                 {#if errors[field.id]}
-                  <div class="text-red-600 flex-grow text-sm ml-2 text-right">
+                  <div class="text-red-600 grow text-sm ml-2 text-right">
                     {errors[field.id]}
                   </div>
                 {/if}
@@ -126,7 +126,7 @@
                   rows={4}
                   class="{errors[field.id]
                     ? 'input-error'
-                    : ''} h-24 input-sm mt-1 input input-bordered w-full mb-3 text-base py-4"
+                    : ''} h-24 input-sm mt-1 input mb-3 text-base py-4"
                 ></textarea>
               {:else}
                 <input
@@ -136,7 +136,7 @@
                   autocomplete={field.autocomplete}
                   class="{errors[field.id]
                     ? 'input-error'
-                    : ''} input-sm mt-1 input input-bordered w-full mb-3 text-base py-4"
+                    : ''} input-sm mt-1 input mb-3 text-base py-4"
                 />
               {/if}
             </label>

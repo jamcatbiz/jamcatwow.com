@@ -7,7 +7,7 @@
 </script>
 
 <button
-  class="btn btn-neutral h-14 rounded-sm m-1 touch-manipulation {keyClass}"
+  class="btn btn-neutral h-14 rounded-xs m-1 touch-manipulation {keyClass}"
   on:click={() => keyPress(char.toUpperCase())}
 >
   {char.toUpperCase()}

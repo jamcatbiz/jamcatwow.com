@@ -44,7 +44,7 @@
             jamcatwow.com/games/anagrams
           </div>
         </div>
-        <div class="flex mt-4">
+        <div class="flex mt-4 w-full justify-center">
           <ShareButton />
         </div>
       </div>

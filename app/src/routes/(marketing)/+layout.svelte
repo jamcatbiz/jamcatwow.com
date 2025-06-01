@@ -10,6 +10,10 @@
   import IconSearch from "~icons/fa6-solid/magnifying-glass"
   // @ts-ignore
   import IconExtras from "~icons/fa6-solid/bars"
+  // @ts-ignore
+  import IconLight from "~icons/fa6-regular/sun"
+  // @ts-ignore
+  import IconDark from "~icons/fa6-regular/moon"
 
   interface Props {
     children?: import("svelte").Snippet
@@ -41,6 +45,13 @@
         <a href="/account" aria-label="Account" class="btn btn-ghost">Account</a
         >
       </li>
+      <li class="md:mx-2">
+        <label class="swap swap-rotate btn btn-ghost btn-square">
+          <input type="checkbox" class="theme-controller" value="jam_light" />
+          <IconLight class="swap-on"/>
+          <IconDark class="swap-off"/>
+        </label>
+      </li>
       <li class="md:mx-0">
         <a href="/search" aria-label="Search" class="btn btn-ghost btn-square">
           <IconSearch />
@@ -50,13 +61,18 @@
     <div class="dropdown dropdown-end px-1 sm:hidden">
       <!-- svelte-ignore a11y_label_has_associated_control -->
       <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+      <label class="swap swap-rotate btn btn-ghost btn-square">
+        <input type="checkbox" class="theme-controller" value="jam_light" />
+        <IconLight class="swap-on"/>
+        <IconDark class="swap-off"/>
+      </label>
       <label tabindex="0" class="btn btn-ghost btn-square">
         <IconExtras />
       </label>
       <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
       <ul
         tabindex="0"
-        class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
+        class="menu menu-lg dropdown-content mt-3 z-1 p-2 shadow-sm bg-base-100 rounded-box w-52 font-bold"
       >
         <li>
           <a href="/games" aria-label="Games" class="btn btn-ghost">Games</a>
@@ -89,14 +105,14 @@
 </div>
 
 <!-- Spacer grows so the footer can be at bottom on short pages -->
-<div class="flex-grow"></div>
+<div class="grow"></div>
 <div class="">
   <div class="border-t max-w-[1000px] mx-auto"></div>
   <footer
-    class="footer p-10 gap-x-48 lg:gap-x-64 xl:gap-x-96 place-content-center text-base"
+    class="footer sm:footer-horizontal p-10 gap-x-48 lg:gap-x-64 xl:gap-x-96 place-content-center text-base"
   >
     <nav>
-      <span class="footer-title opacity-80">Explore</span>
+      <span class="footer-title opacity-60">Explore</span>
       <a class="link link-hover mb-1" href="/">Home</a>
       <a class="link link-hover my-1" href="/subscriptions">Subscribe</a>
       <a class="link link-hover my-1" href="/games">Games</a>
@@ -104,7 +120,7 @@
       <a class="link link-hover my-1" href="/contact_us">Contact Us</a>
     </nav>
     <aside>
-      <span class="footer-title opacity-80">Sincerely</span>
+      <span class="footer-title opacity-60">Sincerely</span>
       <a class="max-w-[260px]" href="/mission">
         <div class="font-bold text-3xl mb-1">JamCatWow</div>
         <div class="font-medium mb-3">Play Games Together Everyday</div>
