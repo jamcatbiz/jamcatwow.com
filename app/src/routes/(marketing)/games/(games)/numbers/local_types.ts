@@ -40,7 +40,9 @@ export type Operations = {
 
 export type PageLoadData = {
   todaysGame: Game
+  todaysIsFallback: boolean
   yesterdaysGame: Game
+  yesterdaysIsFallback: boolean
 }
 
 export type GameData = {

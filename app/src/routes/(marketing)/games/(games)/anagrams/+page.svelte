@@ -19,6 +19,7 @@
   import GameScreen from "$anagrams/_components/GameScreen.svelte"
   import ResumeScreen from "$anagrams/_components/ResumeScreen.svelte"
   import Header from "$anagrams/_components/Header.svelte"
+  import PracticeNotice from "$lib/PracticeNotice.svelte"
 
   // @ts-ignore
   import IconShare from "~icons/fa6-solid/share-from-square"
@@ -53,6 +54,10 @@
   Object.assign(todaysGame, data.todaysGame)
   Object.assign(yesterdaysGame, data.yesterdaysGame)
 </script>
+
+{#if data.todaysIsFallback}
+  <PracticeNotice gameName="Today's Anagrams" />
+{/if}
 
 {#if lastPlayedDate.val != todaysDateIso}
   <StartScreen />

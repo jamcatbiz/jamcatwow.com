@@ -2,7 +2,6 @@ import { LocalStorage } from "$lib/storage.svelte"
 import { getDate } from "$lib/get_date.svelte"
 import type { Answers, Game, Operations, Step } from "$numbers/local_types"
 
-// TODO: Change this back
 const d = getDate(0)
 const yd = getDate(-1)
 const defaultGame: Game = {

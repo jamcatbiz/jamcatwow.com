@@ -13,6 +13,7 @@
   import StartScreen from "$numbers/_components/StartScreen.svelte"
   import GameScreen from "$numbers/_components/GameScreen.svelte"
   import ResumeScreen from "$numbers/_components/ResumeScreen.svelte"
+  import PracticeNotice from "$lib/PracticeNotice.svelte"
 
   let { data }: { data: PageLoadData } = $props()
 
@@ -23,6 +24,10 @@
     livePlayNumbers.val[i] = todaysGame.playNumbers[i]
   }
 </script>
+
+{#if data.todaysIsFallback}
+  <PracticeNotice gameName="Today's Numbers" />
+{/if}
 
 {#if lastPlayedDate.val != todaysDateIso}
   <StartScreen />

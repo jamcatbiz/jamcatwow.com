@@ -7,7 +7,6 @@ import type {
 import { LocalStorage } from "$lib/storage.svelte"
 import { getDate } from "$lib/get_date.svelte"
 
-// TODO: Change this back
 const d = getDate(0)
 const yd = getDate(-1)
 const defaultGame: Game = {

@@ -3,23 +3,25 @@ import type { Game, PageLoadData } from "$anagrams/local_types.ts"
 import type { PageLoad } from "./$types"
 
 import { todaysDateIso, yesterdaysDateIso } from "$anagrams/state.svelte"
+import { fetchDaily } from "$lib/load_daily"
+import { fallbackGame } from "$anagrams/fallback"
+
+const dailyUrl = (date: string) =>
+  `https://s3.amazonaws.com/jamcatwow.com.games/anagrams/days/${date}.json`
 
 // LOAD FUNCTION
 // @ts-expect-error TODO research if this typing can be removed
 export const load: PageLoad = async ({ fetch }) => {
-  const resDate = await fetch(
-    `https://s3.amazonaws.com/jamcatwow.com.games/anagrams/days/${todaysDateIso}.json`,
-  )
-  const game: Game = await resDate.json()
-
-  const resYesterdaysDate = await fetch(
-    `https://s3.amazonaws.com/jamcatwow.com.games/anagrams/days/${yesterdaysDateIso}.json`,
-  )
-  const yesterdaysGame: Game = await resYesterdaysDate.json()
+  const [today, yesterday] = await Promise.all([
+    fetchDaily<Game>(fetch, dailyUrl(todaysDateIso), fallbackGame),
+    fetchDaily<Game>(fetch, dailyUrl(yesterdaysDateIso), fallbackGame),
+  ])
 
   const rv: PageLoadData = {
-    todaysGame: game,
-    yesterdaysGame: yesterdaysGame,
+    todaysGame: today.game,
+    todaysIsFallback: today.isFallback,
+    yesterdaysGame: yesterday.game,
+    yesterdaysIsFallback: yesterday.isFallback,
   }
   return rv
 }

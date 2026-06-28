@@ -30,7 +30,9 @@ export type GuessesSort = {
 
 export type PageLoadData = {
   todaysGame: Game
+  todaysIsFallback: boolean
   yesterdaysGame: Game
+  yesterdaysIsFallback: boolean
 }
 
 export type GameData = {
