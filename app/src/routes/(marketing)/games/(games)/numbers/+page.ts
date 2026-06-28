@@ -6,8 +6,7 @@ import { todaysDateIso, yesterdaysDateIso } from "$numbers/state.svelte"
 import { fetchDaily } from "$lib/load_daily"
 import { fallbackGame } from "$numbers/fallback"
 
-const dailyUrl = (date: string) =>
-  `https://s3.amazonaws.com/jamcatwow.com.games/numbers/days/${date}.json`
+const dailyUrl = (date: string) => `/api/daily/numbers/${date}`
 
 // LOAD FUNCTION
 // @ts-expect-error TODO research if this typing can be removed

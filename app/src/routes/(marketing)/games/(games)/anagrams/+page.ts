@@ -6,8 +6,7 @@ import { todaysDateIso, yesterdaysDateIso } from "$anagrams/state.svelte"
 import { fetchDaily } from "$lib/load_daily"
 import { fallbackGame } from "$anagrams/fallback"
 
-const dailyUrl = (date: string) =>
-  `https://s3.amazonaws.com/jamcatwow.com.games/anagrams/days/${date}.json`
+const dailyUrl = (date: string) => `/api/daily/anagrams/${date}`
 
 // LOAD FUNCTION
 // @ts-expect-error TODO research if this typing can be removed
