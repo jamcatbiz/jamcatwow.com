@@ -8,6 +8,11 @@
     yesterdaysGame,
     hasResumed,
     livePlayNumbers,
+    isCandidate,
+    hasGameOverShown,
+    points,
+    elapsedTime,
+    answers,
   } from "$numbers/state.svelte"
 
   import StartScreen from "$numbers/_components/StartScreen.svelte"
@@ -23,6 +28,36 @@
   for (let i = 0; i < livePlayNumbers.val.length; i++) {
     livePlayNumbers.val[i] = todaysGame.playNumbers[i]
   }
+
+  // Creator play-ahead: save the Creator Score when the creator finishes a real
+  // future candidate. Endpoint re-checks creator + write creds. See ADR 0009.
+  let creatorScoreSaved = false
+  $effect(() => {
+    if (
+      hasGameOverShown.val &&
+      isCandidate &&
+      !data.todaysIsFallback &&
+      !creatorScoreSaved
+    ) {
+      creatorScoreSaved = true
+      fetch(`/api/creator-score/numbers/${todaysDateIso}`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          playedAt: new Date().toISOString(),
+          points: points.val,
+          durationMs: elapsedTime.val,
+          detail: {
+            goalsSolved: Object.values(answers).filter(
+              (a) => a && (a as { solved?: boolean }).solved,
+            ).length,
+          },
+        }),
+      })
+        .then((r) => console.log("[creator-score] numbers save:", r.status))
+        .catch((e) => console.error("[creator-score] save failed", e))
+    }
+  })
 </script>
 
 {#if data.todaysIsFallback}

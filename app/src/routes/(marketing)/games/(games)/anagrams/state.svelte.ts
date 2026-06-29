@@ -5,10 +5,20 @@ import type {
   KeyData,
 } from "$anagrams/local_types.ts"
 import { LocalStorage } from "$lib/storage.svelte"
-import { getDate } from "$lib/get_date.svelte"
+import { getDate, resolveActiveDate, addDays } from "$lib/get_date.svelte"
 
-const d = getDate(0)
-const yd = getDate(-1)
+// The Daily being played: today by default, or a creator's ?date= candidate
+// (the gate only serves a future date to the authenticated creator). Per-daily
+// state is scoped to this date so candidate play-ahead (and later archive
+// replay) never collide with normal play; cumulative stats stay global.
+// See docs/adr/0009.
+const active =
+  typeof window !== "undefined"
+    ? resolveActiveDate(new Date(), window.location.search)
+    : getDate(0)
+const yd = addDays(active.iso, -1)
+const dailyKey = (name: string) => `jamcat_anagrams_${name}_${active.iso}`
+
 const defaultGame: Game = {
   word: "default",
   answers: {},
@@ -16,16 +26,20 @@ const defaultGame: Game = {
   gameNumber: 0,
 }
 
-export const todaysDateIso = d.iso
-export const todaysDateLocale = d.locale
+export const todaysDateIso = active.iso
+export const todaysDateLocale = active.locale
 export const yesterdaysDateIso = yd.iso
 export const yesterdaysDateLocale = yd.locale
+// True when showing a date other than the real today (creator play-ahead).
+// Used to keep candidate plays out of the player's streak/stats.
+export const isCandidate = active.iso !== getDate(0).iso
+
 export const todaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const yesterdaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const timerDuration = $state(1000 * 60 * 5)
 export const currentGuess: Array<string> = $state([])
 export const hasResumed = new LocalStorage(
-  "jamcat_anagrams_hasResumed",
+  dailyKey("hasResumed"),
   false,
   true,
   (str: string) => {
@@ -49,7 +63,7 @@ export const isFirstVisit = $state(
   lastPlayedDate.val === "YYYY-MM-DD" ? true : false,
 )
 export const elapsedTime = new LocalStorage(
-  "jamcat_anagrams_elapsedTime",
+  dailyKey("elapsedTime"),
   0,
   false,
   (str: string) => {
@@ -57,7 +71,7 @@ export const elapsedTime = new LocalStorage(
   },
 )
 export const progress = new LocalStorage(
-  "jamcat_anagrams_progress",
+  dailyKey("progress"),
   0,
   false,
   (str: string) => {
@@ -65,7 +79,7 @@ export const progress = new LocalStorage(
   },
 )
 export const timedProgress = new LocalStorage(
-  "jamcat_anagrams_timedProgress",
+  dailyKey("timedProgress"),
   0,
   false,
   (str: string) => {
@@ -73,7 +87,7 @@ export const timedProgress = new LocalStorage(
   },
 )
 export const points = new LocalStorage(
-  "jamcat_anagrams_points",
+  dailyKey("points"),
   0,
   false,
   (str: string) => {
@@ -81,7 +95,7 @@ export const points = new LocalStorage(
   },
 )
 export const timedPoints = new LocalStorage(
-  "jamcat_anagrams_timedPoints",
+  dailyKey("timedPoints"),
   0,
   false,
   (str: string) => {
@@ -89,7 +103,7 @@ export const timedPoints = new LocalStorage(
   },
 )
 export const guesses: LocalStorage<Guesses> = new LocalStorage(
-  "jamcat_anagrams_guesses",
+  dailyKey("guesses"),
   {},
   false,
   (str: string) => {
@@ -97,7 +111,7 @@ export const guesses: LocalStorage<Guesses> = new LocalStorage(
   },
 )
 export const hasGameOverShown = new LocalStorage(
-  "jamcat_anagrams_hasGameOverShown",
+  dailyKey("hasGameOverShown"),
   false,
   false,
   (str: string) => {

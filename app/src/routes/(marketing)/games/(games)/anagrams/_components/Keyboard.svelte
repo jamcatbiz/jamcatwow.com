@@ -12,6 +12,7 @@
     timerDuration,
     elapsedTime,
     keyData,
+    isCandidate,
   } from "$anagrams/state.svelte"
 
   import Key from "$anagrams/_components/Key.svelte"
@@ -84,7 +85,7 @@
     } else {
       guesses.val[thisGuess] = thisGuess in todaysGame.answers
       guessesSort[currentGuess[0]][thisGuess] = thisGuess in todaysGame.answers
-      statWordsFound.val = statWordsFound.val * 1 + 1
+      if (!isCandidate) statWordsFound.val = statWordsFound.val * 1 + 1
       points.val = points.val + todaysGame.answers[thisGuess].points * 10
       progress.val = Number(
         (

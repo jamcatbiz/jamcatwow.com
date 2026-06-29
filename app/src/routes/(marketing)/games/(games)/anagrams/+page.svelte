@@ -13,6 +13,13 @@
     guessesSort,
     keyData,
     hasResumed,
+    isCandidate,
+    hasGameOverShown,
+    points,
+    timedPoints,
+    progress,
+    elapsedTime,
+    guesses,
   } from "$anagrams/state.svelte"
 
   import StartScreen from "$anagrams/_components/StartScreen.svelte"
@@ -53,6 +60,37 @@
   initKeyData(keyData, data.todaysGame.word)
   Object.assign(todaysGame, data.todaysGame)
   Object.assign(yesterdaysGame, data.yesterdaysGame)
+
+  // Creator play-ahead: when the creator finishes a real future candidate
+  // (the gate only serves it to them), save their Creator Score. The endpoint
+  // re-checks creator + write creds, so this is safe to attempt. See ADR 0009.
+  let creatorScoreSaved = false
+  $effect(() => {
+    if (
+      hasGameOverShown.val &&
+      isCandidate &&
+      !data.todaysIsFallback &&
+      !creatorScoreSaved
+    ) {
+      creatorScoreSaved = true
+      fetch(`/api/creator-score/anagrams/${todaysDateIso}`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          playedAt: new Date().toISOString(),
+          points: points.val,
+          durationMs: elapsedTime.val,
+          detail: {
+            wordsFound: Object.keys(guesses.val).length,
+            timedPoints: timedPoints.val,
+            progress: progress.val,
+          },
+        }),
+      })
+        .then((r) => console.log("[creator-score] anagrams save:", r.status))
+        .catch((e) => console.error("[creator-score] save failed", e))
+    }
+  })
 </script>
 
 {#if data.todaysIsFallback}

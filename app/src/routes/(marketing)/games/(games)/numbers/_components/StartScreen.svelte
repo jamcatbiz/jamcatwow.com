@@ -3,6 +3,7 @@
     elapsedTime,
     hasGameOverShown,
     hasResumed,
+    isCandidate,
     isFirstVisit,
     lastPlayedDate,
     todaysDateIso,
@@ -13,7 +14,8 @@
   function start(): void {
     userSteps.length = 0
 
-    lastPlayedDate.val = todaysDateIso
+    // Candidate (creator play-ahead) plays must not touch streak/stats.
+    if (!isCandidate) lastPlayedDate.val = todaysDateIso
     hasGameOverShown.val = false
     elapsedTime.val = 0
     hasResumed.val = true

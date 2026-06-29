@@ -4,6 +4,7 @@
     guesses,
     hasGameOverShown,
     hasResumed,
+    isCandidate,
     isFirstVisit,
     lastPlayedDate,
     points,
@@ -17,7 +18,6 @@
 
   function start(): void {
     hasResumed.val = true
-    lastPlayedDate.val = todaysDateIso
     hasGameOverShown.val = false
     guesses.val = {}
     points.val = 0
@@ -25,7 +25,11 @@
     timedPoints.val = 0
     timedProgress.val = 0
     elapsedTime.val = 0
-    statGamesPlayed.val = statGamesPlayed.val * 1 + 1
+    // Candidate (creator play-ahead) plays must not touch streak/stats.
+    if (!isCandidate) {
+      lastPlayedDate.val = todaysDateIso
+      statGamesPlayed.val = statGamesPlayed.val * 1 + 1
+    }
   }
 
   if (isFirstVisit) {

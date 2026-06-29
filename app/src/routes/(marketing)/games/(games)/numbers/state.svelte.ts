@@ -1,9 +1,14 @@
 import { LocalStorage } from "$lib/storage.svelte"
-import { getDate } from "$lib/get_date.svelte"
+import { getDate, resolveActiveDate, addDays } from "$lib/get_date.svelte"
 import type { Answers, Game, Operations, Step } from "$numbers/local_types"
 
-const d = getDate(0)
-const yd = getDate(-1)
+// See anagrams/state.svelte.ts + docs/adr/0009 for the date-scoping rationale.
+const active =
+  typeof window !== "undefined"
+    ? resolveActiveDate(new Date(), window.location.search)
+    : getDate(0)
+const yd = addDays(active.iso, -1)
+const dailyKey = (name: string) => `jamcat_numbers_${name}_${active.iso}`
 const defaultGame: Game = {
   goalNumbers: [123, 456, 238],
   playNumbers: [],
@@ -52,16 +57,18 @@ const defaultOperations: Operations = {
   },
 }
 
-export const todaysDateIso = d.iso
-export const todaysDateLocale = d.locale
+export const todaysDateIso = active.iso
+export const todaysDateLocale = active.locale
 export const yesterdaysDateIso = yd.iso
 export const yesterdaysDateLocale = yd.locale
+// True when showing a date other than the real today (creator play-ahead).
+export const isCandidate = active.iso !== getDate(0).iso
 export const todaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const yesterdaysGame = $state(JSON.parse(JSON.stringify(defaultGame)))
 export const timerDuration = $state(1000 * 60 * 3)
 export const points = $state({ val: 0 })
 export const hasResumed = new LocalStorage(
-  "jamcat_numbers_hasResumed",
+  dailyKey("hasResumed"),
   false,
   true,
   (str: string) => {
@@ -83,7 +90,7 @@ export const isFirstVisit = $state(
   lastPlayedDate.val === "YYYY-MM-DD" ? true : false,
 )
 export const elapsedTime = new LocalStorage(
-  "jamcat_numbers_elapsedTime",
+  dailyKey("elapsedTime"),
   0,
   false,
   (str: string) => {
@@ -91,7 +98,7 @@ export const elapsedTime = new LocalStorage(
   },
 )
 export const hasGameOverShown = new LocalStorage(
-  "jamcat_numbers_hasGameOverShown",
+  dailyKey("hasGameOverShown"),
   false,
   false,
   (str: string) => {
