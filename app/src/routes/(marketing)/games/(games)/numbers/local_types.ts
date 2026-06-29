@@ -1,4 +1,5 @@
 import type { LocalStorage } from "$lib/storage.svelte"
+import type { CreatorScore } from "$lib/creator_score"
 
 export type Game = {
   goalNumbers: Array<number>
@@ -11,6 +12,7 @@ export type Game = {
     }
   }
   gameNumber: number
+  creatorScore?: CreatorScore
 }
 
 export type Step = {

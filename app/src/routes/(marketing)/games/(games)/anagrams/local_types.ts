@@ -1,4 +1,5 @@
 import type { LocalStorage } from "$lib/storage.svelte"
+import type { CreatorScore } from "$lib/creator_score"
 
 export type Game = {
   word: string
@@ -10,6 +11,7 @@ export type Game = {
   }
   date: string
   gameNumber: number
+  creatorScore?: CreatorScore
 }
 
 export type KeyData = {
