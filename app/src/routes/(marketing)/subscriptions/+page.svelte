@@ -1,7 +1,6 @@
 <script lang="ts">
   import PricingModule from "./PricingModule.svelte"
   import { WebsiteName } from "../../../config"
-  import PricingHelp from "./PricingHelp.svelte"
 </script>
 
 <svelte:head>
@@ -16,7 +15,6 @@
   </h2>
 
   <div class="w-full my-8">
-    <PricingModule callToAction="Get Started" highlightedPlanId="subscriber" />
-    <PricingHelp />
+    <PricingModule callToAction="Get Started" highlightedPlanId="free" />
   </div>
 </div>

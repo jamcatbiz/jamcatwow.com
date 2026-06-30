@@ -12,17 +12,6 @@ export const contents = {
       color: "primary",
     },
     {
-      name: "Ladders",
-      description:
-        "Classic word ladders puzzle. Change one letter at a time, step by step, from one word to the next.",
-      link: "/games/ladders",
-      linkText: "Play",
-      newPage: false,
-      labels: ["word"],
-      alerts: ["NEW"],
-      color: "error",
-    },
-    {
       name: "Numbers",
       description:
         "Familiar number game where you race the clock, using basic math operations to reach goal numbers.",
@@ -32,16 +21,6 @@ export const contents = {
       labels: ["number", "timed"],
       alerts: [],
       color: "accent",
-    },
-    {
-      name: "Hashbang",
-      description: "Swap letters to find a valid hashtag crossword.",
-      link: "/games/hashbang",
-      linkText: "Play",
-      newPage: false,
-      labels: ["word"],
-      alerts: ["BETA"],
-      color: "info",
     },
   ],
 }
