@@ -2,7 +2,7 @@
   import { WebsiteName } from "./../../config"
   import "../../app.css"
   import { onMount } from "svelte"
-  import { env } from "$env/dynamic/public"
+  import { PUBLIC_POSTHOG_KEY } from "$env/static/public"
   import { afterNavigate } from "$app/navigation"
   import { initAnalytics, clientId, capturePageview } from "$lib/analytics"
 
@@ -28,8 +28,7 @@
   // Anonymous product analytics (ADR 0005). No-op until PUBLIC_POSTHOG_KEY is set.
   onMount(() => {
     initAnalytics({
-      key: env.PUBLIC_POSTHOG_KEY,
-      host: env.PUBLIC_POSTHOG_HOST,
+      key: PUBLIC_POSTHOG_KEY,
       id: clientId(),
     })
   })
