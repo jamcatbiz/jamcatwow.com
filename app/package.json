@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && npm run check:prod-boot",
+    "check:prod-boot": "node scripts/check-prod-boot.mjs",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
