@@ -1,5 +1,6 @@
 <script lang="ts">
   import { todaysGame } from "$numbers/state.svelte"
+  import { track } from "$lib/analytics"
 
   // @ts-ignore
   import IconShare from "~icons/fa6-regular/share-from-square"
@@ -33,6 +34,7 @@ jamcatwow.com/games/numbers`
         await navigator.share({
           text: shareMessage,
         })
+        track("result_shared", { game: "numbers", method: "native" })
         Toastify(shareToast).showToast()
       } catch (err) {
         handleClipboard()
@@ -45,6 +47,7 @@ jamcatwow.com/games/numbers`
   async function handleClipboard(): Promise<void> {
     try {
       navigator.clipboard.writeText(shareMessage)
+      track("result_shared", { game: "numbers", method: "clipboard" })
       Toastify(clipboardToast).showToast()
     } catch (err) {
       alert(err)

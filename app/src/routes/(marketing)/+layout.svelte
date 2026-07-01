@@ -3,7 +3,8 @@
   import "../../app.css"
   import { onMount } from "svelte"
   import { env } from "$env/dynamic/public"
-  import { initAnalytics, clientId } from "$lib/analytics"
+  import { afterNavigate } from "$app/navigation"
+  import { initAnalytics, clientId, capturePageview } from "$lib/analytics"
 
   // @ts-ignore
   import IconJam from "~icons/fa6-solid/jar"
@@ -31,6 +32,11 @@
       host: env.PUBLIC_POSTHOG_HOST,
       id: clientId(),
     })
+  })
+
+  // Capture SPA (client-side) navigations; the initial load is auto-captured.
+  afterNavigate((nav) => {
+    if (nav.from) capturePageview()
   })
 </script>
 

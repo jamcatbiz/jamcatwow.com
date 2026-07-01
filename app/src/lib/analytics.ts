@@ -39,7 +39,8 @@ export async function initAnalytics(opts: {
     api_host: opts.host || "https://us.i.posthog.com",
     persistence: "localStorage", // cookieless
     bootstrap: { distinctID: opts.id },
-    capture_pageview: true,
+    capture_pageview: true, // initial load; SPA navs via capturePageview()
+    respect_dnt: true,
   })
   posthog.register({ client_id: opts.id })
   ph = posthog
@@ -47,4 +48,10 @@ export async function initAnalytics(opts: {
 
 export function track(event: string, props?: Record<string, unknown>): void {
   ph?.capture(event, props)
+}
+
+// Manual pageview for client-side (SPA) navigations — the initial load is
+// captured automatically, so call this only on subsequent navigations.
+export function capturePageview(): void {
+  ph?.capture("$pageview")
 }
