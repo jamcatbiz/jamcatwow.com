@@ -10,8 +10,10 @@
     todaysDateLocale,
     userSteps,
   } from "$numbers/state.svelte"
+  import { track } from "$lib/analytics"
 
   function start(): void {
+    track("game_started", { game: "numbers", candidate: isCandidate })
     userSteps.length = 0
 
     // Candidate (creator play-ahead) plays must not touch streak/stats.

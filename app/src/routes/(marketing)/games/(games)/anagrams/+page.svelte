@@ -21,6 +21,7 @@
     elapsedTime,
     guesses,
   } from "$anagrams/state.svelte"
+  import { track } from "$lib/analytics"
 
   import StartScreen from "$anagrams/_components/StartScreen.svelte"
   import GameScreen from "$anagrams/_components/GameScreen.svelte"
@@ -65,7 +66,16 @@
   // (the gate only serves it to them), save their Creator Score. The endpoint
   // re-checks creator + write creds, so this is safe to attempt. See ADR 0009.
   let creatorScoreSaved = false
+  let completedTracked = false
   $effect(() => {
+    if (hasGameOverShown.val && !completedTracked) {
+      completedTracked = true
+      track("game_completed", {
+        game: "anagrams",
+        points: points.val,
+        durationMs: elapsedTime.val,
+      })
+    }
     if (
       hasGameOverShown.val &&
       isCandidate &&

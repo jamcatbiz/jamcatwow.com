@@ -1,6 +1,9 @@
 <script lang="ts">
   import { WebsiteName } from "./../../config"
   import "../../app.css"
+  import { onMount } from "svelte"
+  import { env } from "$env/dynamic/public"
+  import { initAnalytics, clientId } from "$lib/analytics"
 
   // @ts-ignore
   import IconJam from "~icons/fa6-solid/jar"
@@ -20,6 +23,15 @@
   }
 
   let { children }: Props = $props()
+
+  // Anonymous product analytics (ADR 0005). No-op until PUBLIC_POSTHOG_KEY is set.
+  onMount(() => {
+    initAnalytics({
+      key: env.PUBLIC_POSTHOG_KEY,
+      host: env.PUBLIC_POSTHOG_HOST,
+      id: clientId(),
+    })
+  })
 </script>
 
 <div class="navbar bg-base-100 container mx-auto">

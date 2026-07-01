@@ -14,6 +14,7 @@
     elapsedTime,
     answers,
   } from "$numbers/state.svelte"
+  import { track } from "$lib/analytics"
 
   import StartScreen from "$numbers/_components/StartScreen.svelte"
   import GameScreen from "$numbers/_components/GameScreen.svelte"
@@ -32,7 +33,16 @@
   // Creator play-ahead: save the Creator Score when the creator finishes a real
   // future candidate. Endpoint re-checks creator + write creds. See ADR 0009.
   let creatorScoreSaved = false
+  let completedTracked = false
   $effect(() => {
+    if (hasGameOverShown.val && !completedTracked) {
+      completedTracked = true
+      track("game_completed", {
+        game: "numbers",
+        points: points.val,
+        durationMs: elapsedTime.val,
+      })
+    }
     if (
       hasGameOverShown.val &&
       isCandidate &&

@@ -15,8 +15,10 @@
     todaysDateIso,
     todaysDateLocale,
   } from "$anagrams/state.svelte"
+  import { track } from "$lib/analytics"
 
   function start(): void {
+    track("game_started", { game: "anagrams", candidate: isCandidate })
     hasResumed.val = true
     hasGameOverShown.val = false
     guesses.val = {}
