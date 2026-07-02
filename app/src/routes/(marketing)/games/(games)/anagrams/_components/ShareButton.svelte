@@ -5,20 +5,40 @@
     timedPoints,
     timedProgress,
     todaysGame,
+    todaysDateIso,
   } from "$anagrams/state.svelte"
   import { track } from "$lib/analytics"
+  import { resultPermalink } from "$lib/result_share"
 
   // @ts-ignore
   import IconShare from "~icons/fa6-regular/share-from-square"
   // @ts-ignore
   import { Toastify, type ToastifyConfigurationObject } from "toastify-js"
 
-  const shareMessage: string = `Anagrams #${todaysGame.gameNumber}
+  // Shareable Result permalink (ADR 0003) — spoiler-free performance only.
+  const permalink = $derived(
+    resultPermalink(
+      typeof location !== "undefined" ? location.origin : "https://jamcatwow.com",
+      "anagrams",
+      todaysDateIso,
+      {
+        v: 1,
+        n: todaysGame.gameNumber,
+        p: points.val,
+        tp: timedPoints.val,
+        pr: progress.val,
+        tpr: timedProgress.val,
+      },
+    ),
+  )
+
+  // Text+emoji fallback for surfaces that don't unfurl the link.
+  const shareMessage = $derived(`Anagrams #${todaysGame.gameNumber}
 
 ⬜️ ${timedPoints.val} timed, ${points.val} total
 ⚪️ ${timedProgress.val}% timed, ${progress.val}% total
 
-jamcatwow.com/games/anagrams`
+${permalink}`)
 
   const clipboardToast: ToastifyConfigurationObject = {
     text: "Copied score to clipboard",

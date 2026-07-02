@@ -1,16 +1,31 @@
 <script lang="ts">
-  import { todaysGame } from "$numbers/state.svelte"
+  import { points, todaysGame, todaysDateIso } from "$numbers/state.svelte"
   import { track } from "$lib/analytics"
+  import { resultPermalink } from "$lib/result_share"
 
   // @ts-ignore
   import IconShare from "~icons/fa6-regular/share-from-square"
   // @ts-ignore
   import { Toastify, type ToastifyConfigurationObject } from "toastify-js"
 
-  const shareMessage: string = `JamCatWow Numbers #34
-☆★★
-270 points
-jamcatwow.com/games/numbers`
+  // Shareable Result permalink (ADR 0003) — spoiler-free performance only.
+  const permalink = $derived(
+    resultPermalink(
+      typeof location !== "undefined" ? location.origin : "https://jamcatwow.com",
+      "numbers",
+      todaysDateIso,
+      { v: 1, n: todaysGame.gameNumber, p: points.val },
+    ),
+  )
+
+  // Stars derive from points (each goal reached = 1 star = 100 pts, max 3).
+  const stars = $derived(Math.max(0, Math.min(3, Math.floor(points.val / 100))))
+
+  // Text+emoji fallback for surfaces that don't unfurl the link.
+  const shareMessage = $derived(`JamCatWow Numbers #${todaysGame.gameNumber}
+${"★".repeat(stars)}${"☆".repeat(3 - stars)}
+${points.val} points
+${permalink}`)
 
   const clipboardToast: ToastifyConfigurationObject = {
     text: "Copied score to clipboard",
