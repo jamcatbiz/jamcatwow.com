@@ -11,6 +11,8 @@ export const GET: RequestHandler = async () => {
       ".*\\(admin\\).*", // i.e. exclude routes within admin group
       ".*ladders.*", // Parked games (ADR 0008): code stays, off the sitemap
       ".*hashbang.*",
+      ".*/r/\\[game\\].*", // Result permalinks (ADR 0003): unbounded params, not canonical content
+      ".*/creator.*", // Creator-only dashboard, not for crawlers
     ],
   })
 }

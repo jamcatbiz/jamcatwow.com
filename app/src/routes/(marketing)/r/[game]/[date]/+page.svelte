@@ -41,7 +41,20 @@
 </script>
 
 <svelte:head>
-  <title>{gameName}{gameNumber ? ` #${gameNumber}` : ""} — beat this score · JamCatWow</title>
+  <title>{data.title}</title>
+  <meta name="description" content={data.description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="JamCatWow" />
+  <meta property="og:title" content={data.title} />
+  <meta property="og:description" content={data.description} />
+  <meta property="og:url" content={data.pageUrl} />
+  <meta property="og:image" content={data.ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={data.title} />
+  <meta name="twitter:description" content={data.description} />
+  <meta name="twitter:image" content={data.ogImage} />
 </svelte:head>
 
 <div class="min-h-[70vh] flex items-center justify-center p-6">
